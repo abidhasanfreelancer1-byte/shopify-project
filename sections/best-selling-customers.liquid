@@ -1,33 +1,36 @@
 {%- comment -%}
-  Best Selling Customers — premium social proof marquee section.
-  Namespace: best-selling-customers (liquid, css, js)
-  Add via Theme Editor → Product page → Add section → "Best Selling Customers"
+  Best Selling in Dhaka — Live Social Proof Slider
+  Theme Editor → Product page → Add section → "Best Selling Customers"
+  Add customer blocks to upload photos, names, and locations.
 {%- endcomment -%}
 
 {{ 'best-selling-customers.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'best-selling-customers.js' | asset_url }}" defer="defer"></script>
 
 {%- liquid
-  assign shadow_opacity = section.settings.card_shadow | divided_by: 100.0
-  assign shadow_blur = section.settings.card_shadow | times: 0.4 | round
-  assign shadow_y = section.settings.card_shadow | times: 0.08 | round
-  if section.settings.card_shadow == 0
-    assign card_shadow_value = 'none'
+  if section.settings.auto_scroll_speed == 0
+    assign scroll_step = 0
   else
-    assign card_shadow_value = shadow_y | append: 'px ' | append: shadow_blur | append: 'px rgba(17, 17, 17, ' | append: shadow_opacity | append: ')'
+    assign scroll_step = section.settings.auto_scroll_speed | divided_by: 20 | at_least: 1
+  endif
+  if section.settings.enable_infinite_loop
+    assign loop_passes = 2
+  else
+    assign loop_passes = 1
   endif
 -%}
 
 {%- style -%}
   #BestSellingCustomers-{{ section.id }} {
-    --bsc-heading-color: {{ section.settings.heading_color }};
-    --bsc-text-color: {{ section.settings.text_color }};
-    --bsc-bg-color: {{ section.settings.background_color }};
-    --bsc-card-bg: {{ section.settings.card_background }};
-    --bsc-card-radius: {{ section.settings.border_radius }}px;
+    --bsc-bg: {{ section.settings.background_color }};
+    --bsc-card: {{ section.settings.card_background }};
+    --bsc-text: {{ section.settings.heading_color }};
+    --bsc-muted: {{ section.settings.muted_text_color }};
+    --bsc-live: {{ section.settings.live_badge_color }};
+    --bsc-radius: {{ section.settings.border_radius }}px;
     --bsc-card-gap: {{ section.settings.card_gap }}px;
-    --bsc-card-shadow: {{ card_shadow_value }};
-    --bsc-live-color: {{ section.settings.live_badge_color }};
+    --bsc-card-width: {{ section.settings.card_width }}px;
+    --bsc-card-width-mobile: {{ section.settings.card_width_mobile }}px;
     --bsc-padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     --bsc-padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
@@ -45,36 +48,32 @@
   class="bsc-section"
   aria-label="{{ section.settings.heading | escape }}"
   data-bsc-slider
-  data-auto-scroll-speed="{{ section.settings.auto_scroll_speed | divided_by: 100.0 }}"
   data-infinite-loop="{{ section.settings.enable_infinite_loop }}"
+  data-scroll-step="{{ scroll_step }}"
+  data-scroll-interval="20"
+  data-resume-delay="3000"
   {{ section.shopify_attributes }}
 >
-  <div class="bsc-section__inner page-width">
-    {%- if section.settings.heading != blank or section.settings.subheading != blank or section.settings.show_live_badge -%}
-      <header class="bsc-header">
-        {%- if section.settings.heading != blank or section.settings.show_live_badge -%}
-          <div class="bsc-header__title-row">
-            {%- if section.settings.heading != blank -%}
-              <h2 class="bsc-header__heading">{{ section.settings.heading | escape }}</h2>
-            {%- endif -%}
+  {%- if section.settings.show_live_badge -%}
+    <div class="bsc-corner-live">
+      <span class="bsc-live-dot" aria-hidden="true"></span>
+      {{ section.settings.live_badge_text | escape }}
+    </div>
+  {%- endif -%}
 
-            {%- if section.settings.show_live_badge -%}
-              <span class="bsc-header__live-badge">
-                {{ section.settings.live_badge_text | escape }}
-              </span>
-            {%- endif -%}
-          </div>
-        {%- endif -%}
-
-        {%- if section.settings.subheading != blank -%}
-          <p class="bsc-header__subheading">{{ section.settings.subheading | escape }}</p>
-        {%- endif -%}
-      </header>
+  <div class="bsc-header">
+    {%- if section.settings.heading != blank -%}
+      <h3 class="bsc-title">{{ section.settings.heading | escape }}</h3>
     {%- endif -%}
+    {%- if section.settings.subheading != blank -%}
+      <p class="bsc-subtitle">{{ section.settings.subheading | escape }}</p>
+    {%- endif -%}
+  </div>
 
-    {%- if section.blocks.size > 0 -%}
-      <div class="bsc-track-wrapper" data-bsc-track-wrapper>
-        <div class="bsc-track" data-bsc-track role="list">
+  {%- if section.blocks.size > 0 -%}
+    <div class="bsc-track-wrap">
+      <div class="bsc-track" data-bsc-track role="list">
+        {%- for pass in (1..loop_passes) -%}
           {%- for block in section.blocks -%}
             {%- if block.type == 'customer' -%}
               {%- liquid
@@ -87,59 +86,48 @@
               <article
                 class="bsc-card"
                 role="listitem"
-                {{ block.shopify_attributes }}
+                {% if pass == 2 %}aria-hidden="true"{% endif %}
+                {% if pass == 1 %}{{ block.shopify_attributes }}{% endif %}
               >
-                <div class="bsc-card__photo-wrap">
+                <div class="bsc-image-wrap">
                   {%- if block.settings.photo != blank -%}
                     {{
                       block.settings.photo
-                      | image_url: width: 440
+                      | image_url: width: 400
                       | image_tag:
-                        class: 'bsc-card__photo',
                         loading: 'lazy',
                         decoding: 'async',
-                        widths: '110, 165, 220, 330, 440',
-                        sizes: '(min-width: 750px) 220px, 72vw',
+                        widths: '145, 180, 360, 400',
+                        sizes: '(max-width: 749px) 145px, 180px',
                         alt: photo_alt
                     }}
                   {%- else -%}
-                    <div class="bsc-card__photo-placeholder" aria-hidden="true">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                      </svg>
-                    </div>
+                    <div class="bsc-image-placeholder" aria-hidden="true">Photo</div>
                   {%- endif -%}
                 </div>
-
-                {%- if block.settings.name != blank -%}
-                  <h3 class="bsc-card__name">{{ block.settings.name | escape }}</h3>
-                {%- endif -%}
-
-                {%- if block.settings.location != blank -%}
-                  <p class="bsc-card__location">{{ block.settings.location | escape }}</p>
-                {%- endif -%}
-
-                {%- if block.settings.show_verified_badge -%}
-                  <span class="bsc-card__verified">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                    </svg>
-                    {{ block.settings.verified_badge_text | escape }}
-                  </span>
-                {%- endif -%}
+                <div class="bsc-info">
+                  {%- if block.settings.name != blank -%}
+                    <p class="bsc-name">{{ block.settings.name | escape }}</p>
+                  {%- endif -%}
+                  {%- if block.settings.location != blank -%}
+                    <p class="bsc-location">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M12 21s7-4.5 7-11a7 7 0 1 0-14 0c0 6.5 7 11 7 11z"/>
+                        <circle cx="12" cy="10" r="2.5"/>
+                      </svg>
+                      {{ block.settings.location | escape }}
+                    </p>
+                  {%- endif -%}
+                </div>
               </article>
             {%- endif -%}
           {%- endfor -%}
-        </div>
+        {%- endfor -%}
       </div>
-    {%- else -%}
-      <div class="bsc-header">
-        <p class="bsc-header__subheading">
-          Add customer blocks in the Theme Editor to display social proof cards.
-        </p>
-      </div>
-    {%- endif -%}
-  </div>
+    </div>
+  {%- else -%}
+    <p class="bsc-empty">Add customer blocks in the Theme Editor to show social proof cards.</p>
+  {%- endif -%}
 </section>
 
 {% schema %}
@@ -175,29 +163,29 @@
       "type": "text",
       "id": "live_badge_text",
       "label": "LIVE badge text",
-      "default": "🔴 LIVE"
+      "default": "Live"
     },
     {
       "type": "color",
       "id": "live_badge_color",
-      "label": "LIVE badge color",
-      "default": "#E53935"
+      "label": "LIVE dot color",
+      "default": "#22C55E"
     },
     {
       "type": "header",
-      "content": "Colors & styling"
+      "content": "Colors & layout"
     },
     {
       "type": "color",
       "id": "heading_color",
       "label": "Heading color",
-      "default": "#111111"
+      "default": "#1A1A1A"
     },
     {
       "type": "color",
-      "id": "text_color",
-      "label": "Text color",
-      "default": "#111111"
+      "id": "muted_text_color",
+      "label": "Subheading & location color",
+      "default": "#666666"
     },
     {
       "type": "color",
@@ -215,31 +203,41 @@
       "type": "range",
       "id": "border_radius",
       "min": 0,
-      "max": 32,
+      "max": 24,
       "step": 2,
       "unit": "px",
-      "label": "Card border radius",
-      "default": 16
+      "label": "Section border radius",
+      "default": 14
     },
     {
       "type": "range",
-      "id": "card_shadow",
-      "min": 0,
-      "max": 100,
+      "id": "card_width",
+      "min": 120,
+      "max": 240,
       "step": 5,
-      "label": "Card shadow intensity",
-      "default": 35,
-      "info": "0 = no shadow, 100 = strongest shadow."
+      "unit": "px",
+      "label": "Card width (desktop)",
+      "default": 180
+    },
+    {
+      "type": "range",
+      "id": "card_width_mobile",
+      "min": 100,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Card width (mobile)",
+      "default": 145
     },
     {
       "type": "range",
       "id": "card_gap",
       "min": 8,
-      "max": 48,
-      "step": 4,
+      "max": 32,
+      "step": 2,
       "unit": "px",
       "label": "Gap between cards",
-      "default": 16
+      "default": 14
     },
     {
       "type": "header",
@@ -252,7 +250,7 @@
       "max": 100,
       "step": 5,
       "label": "Auto scroll speed",
-      "default": 35,
+      "default": 20,
       "info": "0 = paused. Higher values scroll faster."
     },
     {
@@ -269,21 +267,21 @@
       "type": "range",
       "id": "padding_top",
       "min": 0,
-      "max": 100,
-      "step": 4,
+      "max": 60,
+      "step": 2,
       "unit": "px",
       "label": "Padding top",
-      "default": 36
+      "default": 22
     },
     {
       "type": "range",
       "id": "padding_bottom",
       "min": 0,
-      "max": 100,
-      "step": 4,
+      "max": 60,
+      "step": 2,
       "unit": "px",
       "label": "Padding bottom",
-      "default": 36
+      "default": 12
     }
   ],
   "blocks": [
@@ -299,26 +297,13 @@
         {
           "type": "text",
           "id": "name",
-          "label": "Customer name",
-          "default": "Customer name"
+          "label": "Customer name"
         },
         {
           "type": "text",
           "id": "location",
           "label": "Customer location",
-          "default": "City / District"
-        },
-        {
-          "type": "checkbox",
-          "id": "show_verified_badge",
-          "label": "Show verified purchase badge",
-          "default": true
-        },
-        {
-          "type": "text",
-          "id": "verified_badge_text",
-          "label": "Verified badge text",
-          "default": "Verified Purchase"
+          "default": "Dhaka"
         }
       ]
     }
@@ -327,8 +312,6 @@
     {
       "name": "Best Selling Customers",
       "blocks": [
-        { "type": "customer" },
-        { "type": "customer" },
         { "type": "customer" },
         { "type": "customer" },
         { "type": "customer" },

@@ -1,6 +1,5 @@
 /**
- * Best Selling Customers — infinite marquee slider
- * Vanilla JS: auto-scroll, drag, touch, pause on interaction.
+ * Best Selling Customers — scroll-based infinite slider (LPF-style)
  */
 
 class BestSellingCustomersSlider {
@@ -8,227 +7,175 @@ class BestSellingCustomersSlider {
 
   constructor(root) {
     this.root = root;
-    this.wrapper = root.querySelector('[data-bsc-track-wrapper]');
     this.track = root.querySelector('[data-bsc-track]');
+    if (!this.track || this.track.children.length === 0) return;
 
-    if (!this.wrapper || !this.track || this.track.children.length === 0) return;
-
-    this.speed = parseFloat(root.dataset.autoScrollSpeed) || 0.35;
     this.infiniteLoop = root.dataset.infiniteLoop !== 'false';
+    this.scrollStep = parseFloat(root.dataset.scrollStep) || 0;
+    this.scrollInterval = parseInt(root.dataset.scrollInterval, 10) || 20;
+    this.resumeDelay = parseInt(root.dataset.resumeDelay, 10) || 3000;
     this.reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    this.position = 0;
+    this.isDown = false;
+    this.startX = 0;
+    this.scrollLeft = 0;
+    this.autoTimer = null;
+    this.resumeTimer = null;
+    this.userInteracting = false;
     this.halfWidth = 0;
-    this.maxScroll = 0;
-    this.isPaused = false;
-    this.isDragging = false;
-    this.isHovered = false;
-    this.isTouching = false;
-    this.dragStartX = 0;
-    this.dragStartPosition = 0;
-    this.rafId = null;
 
-    this.onPointerDown = this.onPointerDown.bind(this);
-    this.onPointerMove = this.onPointerMove.bind(this);
-    this.onPointerUp = this.onPointerUp.bind(this);
-    this.onMouseEnter = this.onMouseEnter.bind(this);
-    this.onMouseLeave = this.onMouseLeave.bind(this);
+    this.onMouseDown = this.onMouseDown.bind(this);
+    this.onMouseMove = this.onMouseMove.bind(this);
+    this.onMouseUp = this.onMouseUp.bind(this);
     this.onTouchStart = this.onTouchStart.bind(this);
     this.onTouchEnd = this.onTouchEnd.bind(this);
-    this.tick = this.tick.bind(this);
-    this.onResize = this.debounce(this.onResize.bind(this), 150);
+    this.onScroll = this.onScroll.bind(this);
+    this.onResize = this.onResize.bind(this);
 
     this.setup();
     BestSellingCustomersSlider.instances.set(root, this);
   }
 
   setup() {
-    this.resetTrack();
     this.bindEvents();
-    this.start();
+    this.calcHalfWidth();
+    if (!this.reducedMotion && this.scrollStep > 0) this.startAutoScroll();
   }
 
-  resetTrack() {
-    this.track.querySelectorAll('.bsc-card--clone').forEach((node) => node.remove());
-    this.track.style.transform = 'translate3d(0, 0, 0)';
-    this.position = 0;
-
-    if (this.infiniteLoop && this.track.children.length > 0) {
-      const originals = Array.from(this.track.children);
-      originals.forEach((item) => {
-        const clone = item.cloneNode(true);
-        clone.classList.add('bsc-card--clone');
-        clone.setAttribute('aria-hidden', 'true');
-        clone.querySelectorAll('img').forEach((img) => {
-          img.setAttribute('loading', 'lazy');
-          img.setAttribute('decoding', 'async');
-        });
-        this.track.appendChild(clone);
-      });
-      this.halfWidth = this.track.scrollWidth / 2;
-    } else {
-      this.halfWidth = 0;
-      this.maxScroll = Math.max(0, this.track.scrollWidth - this.wrapper.clientWidth);
-    }
+  calcHalfWidth() {
+    this.halfWidth = this.infiniteLoop ? this.track.scrollWidth / 2 : 0;
   }
 
   bindEvents() {
-    this.wrapper.addEventListener('pointerdown', this.onPointerDown);
-    window.addEventListener('pointermove', this.onPointerMove);
-    window.addEventListener('pointerup', this.onPointerUp);
-    window.addEventListener('pointercancel', this.onPointerUp);
-    this.wrapper.addEventListener('mouseenter', this.onMouseEnter);
-    this.wrapper.addEventListener('mouseleave', this.onMouseLeave);
-    this.wrapper.addEventListener('touchstart', this.onTouchStart, { passive: true });
-    this.wrapper.addEventListener('touchend', this.onTouchEnd);
-    this.wrapper.addEventListener('touchcancel', this.onTouchEnd);
+    this.track.addEventListener('mousedown', this.onMouseDown);
+    this.track.addEventListener('mousemove', this.onMouseMove);
+    this.track.addEventListener('mouseup', this.onMouseUp);
+    this.track.addEventListener('mouseleave', this.onMouseUp);
+    this.track.addEventListener('touchstart', this.onTouchStart, { passive: true });
+    this.track.addEventListener('touchend', this.onTouchEnd, { passive: true });
+    this.track.addEventListener('scroll', this.onScroll, { passive: true });
     window.addEventListener('resize', this.onResize);
   }
 
   unbindEvents() {
-    this.wrapper.removeEventListener('pointerdown', this.onPointerDown);
-    window.removeEventListener('pointermove', this.onPointerMove);
-    window.removeEventListener('pointerup', this.onPointerUp);
-    window.removeEventListener('pointercancel', this.onPointerUp);
-    this.wrapper.removeEventListener('mouseenter', this.onMouseEnter);
-    this.wrapper.removeEventListener('mouseleave', this.onMouseLeave);
-    this.wrapper.removeEventListener('touchstart', this.onTouchStart);
-    this.wrapper.removeEventListener('touchend', this.onTouchEnd);
-    this.wrapper.removeEventListener('touchcancel', this.onTouchEnd);
+    this.track.removeEventListener('mousedown', this.onMouseDown);
+    this.track.removeEventListener('mousemove', this.onMouseMove);
+    this.track.removeEventListener('mouseup', this.onMouseUp);
+    this.track.removeEventListener('mouseleave', this.onMouseUp);
+    this.track.removeEventListener('touchstart', this.onTouchStart);
+    this.track.removeEventListener('touchend', this.onTouchEnd);
+    this.track.removeEventListener('scroll', this.onScroll);
     window.removeEventListener('resize', this.onResize);
   }
 
-  start() {
-    if (this.rafId) cancelAnimationFrame(this.rafId);
-    this.rafId = requestAnimationFrame(this.tick);
-  }
-
   destroy() {
-    if (this.rafId) cancelAnimationFrame(this.rafId);
+    this.stopAutoScroll();
+    clearTimeout(this.resumeTimer);
     this.unbindEvents();
     BestSellingCustomersSlider.instances.delete(this.root);
   }
 
-  shouldAutoScroll() {
-    return !this.reducedMotion && !this.isPaused && !this.isDragging && !this.isHovered && !this.isTouching;
+  pauseAuto() {
+    this.userInteracting = true;
+    this.track.classList.add('is-paused');
+    this.stopAutoScroll();
+    clearTimeout(this.resumeTimer);
   }
 
-  tick() {
-    if (this.shouldAutoScroll()) {
-      this.position += this.speed;
-
-      if (this.infiniteLoop && this.halfWidth > 0) {
-        if (this.position >= this.halfWidth) {
-          this.position -= this.halfWidth;
-        }
-      } else if (this.maxScroll > 0) {
-        if (this.position >= this.maxScroll) {
-          this.position = 0;
-        }
-      }
-    }
-
-    this.applyTransform();
-    this.rafId = requestAnimationFrame(this.tick);
+  resumeAuto(delay) {
+    clearTimeout(this.resumeTimer);
+    this.resumeTimer = setTimeout(() => {
+      this.userInteracting = false;
+      this.track.classList.remove('is-paused');
+      if (!this.reducedMotion) this.startAutoScroll();
+    }, delay || this.resumeDelay);
   }
 
-  applyTransform() {
-    this.track.style.transform = `translate3d(-${this.position}px, 0, 0)`;
+  startDrag(clientX) {
+    this.isDown = true;
+    this.pauseAuto();
+    this.track.classList.add('is-dragging');
+    this.startX = clientX;
+    this.scrollLeft = this.track.scrollLeft;
   }
 
-  setPaused(paused) {
-    this.isPaused = paused;
-    this.wrapper.classList.toggle('is-paused', paused);
+  moveDrag(clientX) {
+    if (!this.isDown) return;
+    this.track.scrollLeft = this.scrollLeft - (clientX - this.startX);
   }
 
-  onPointerDown(event) {
-    if (event.button !== 0 && event.pointerType === 'mouse') return;
-
-    this.isDragging = true;
-    this.dragStartX = event.clientX;
-    this.dragStartPosition = this.position;
-    this.wrapper.classList.add('is-dragging');
-    this.setPaused(true);
-
-    if (this.wrapper.setPointerCapture && event.pointerId !== undefined) {
-      try {
-        this.wrapper.setPointerCapture(event.pointerId);
-      } catch (_error) {
-        /* ignore */
-      }
-    }
+  endDrag() {
+    if (!this.isDown) return;
+    this.isDown = false;
+    this.track.classList.remove('is-dragging');
+    this.resumeAuto(this.resumeDelay);
   }
 
-  onPointerMove(event) {
-    if (!this.isDragging) return;
-
-    const delta = this.dragStartX - event.clientX;
-    let nextPosition = this.dragStartPosition + delta;
-
-    if (this.infiniteLoop && this.halfWidth > 0) {
-      while (nextPosition < 0) nextPosition += this.halfWidth;
-      while (nextPosition >= this.halfWidth) nextPosition -= this.halfWidth;
-    } else {
-      nextPosition = Math.max(0, Math.min(nextPosition, this.maxScroll));
-    }
-
-    this.position = nextPosition;
-    this.applyTransform();
+  onMouseDown(event) {
+    if (event.button !== 0) return;
+    this.startDrag(event.pageX);
   }
 
-  onPointerUp(event) {
-    if (!this.isDragging) return;
-
-    this.isDragging = false;
-    this.wrapper.classList.remove('is-dragging');
-
-    if (this.wrapper.releasePointerCapture && event.pointerId !== undefined) {
-      try {
-        this.wrapper.releasePointerCapture(event.pointerId);
-      } catch (_error) {
-        /* ignore */
-      }
-    }
-
-    if (!this.isHovered && !this.isTouching) {
-      this.setPaused(false);
-    }
+  onMouseMove(event) {
+    if (!this.isDown) return;
+    event.preventDefault();
+    this.moveDrag(event.pageX);
   }
 
-  onMouseEnter() {
-    this.isHovered = true;
-    this.setPaused(true);
-  }
-
-  onMouseLeave() {
-    this.isHovered = false;
-    if (!this.isDragging && !this.isTouching) {
-      this.setPaused(false);
-    }
+  onMouseUp() {
+    this.endDrag();
   }
 
   onTouchStart() {
-    this.isTouching = true;
-    this.setPaused(true);
+    this.pauseAuto();
   }
 
   onTouchEnd() {
-    this.isTouching = false;
-    if (!this.isDragging && !this.isHovered) {
-      this.setPaused(false);
+    this.resumeAuto(this.resumeDelay);
+  }
+
+  onScroll() {
+    if (this.userInteracting || this.isDown || !this.infiniteLoop) return;
+    this.calcHalfWidth();
+    if (this.halfWidth > 0 && this.track.scrollLeft >= this.halfWidth) {
+      this.track.scrollLeft -= this.halfWidth;
     }
   }
 
   onResize() {
-    this.resetTrack();
+    this.calcHalfWidth();
   }
 
-  debounce(fn, wait) {
-    let timeout;
-    return (...args) => {
-      clearTimeout(timeout);
-      timeout = setTimeout(() => fn.apply(this, args), wait);
-    };
+  startAutoScroll() {
+    this.stopAutoScroll();
+    if (this.scrollStep <= 0) return;
+
+    this.calcHalfWidth();
+
+    this.autoTimer = setInterval(() => {
+      if (this.userInteracting || this.isDown) return;
+
+      this.track.scrollLeft += this.scrollStep;
+
+      if (this.infiniteLoop && this.halfWidth > 0 && this.track.scrollLeft >= this.halfWidth) {
+        this.track.scrollLeft -= this.halfWidth;
+      }
+    }, this.scrollInterval);
+  }
+
+  stopAutoScroll() {
+    if (this.autoTimer) {
+      clearInterval(this.autoTimer);
+      this.autoTimer = null;
+    }
+  }
+
+  setPaused(paused) {
+    if (paused) {
+      this.pauseAuto();
+    } else {
+      this.resumeAuto(0);
+    }
   }
 }
 
@@ -268,7 +215,6 @@ document.addEventListener('shopify:section:reorder', () => {
 document.addEventListener('shopify:block:select', (event) => {
   const slider = event.target.closest('[data-bsc-slider]');
   if (!slider) return;
-
   const instance = BestSellingCustomersSlider.instances.get(slider);
   if (instance) instance.setPaused(true);
 });
@@ -276,9 +222,6 @@ document.addEventListener('shopify:block:select', (event) => {
 document.addEventListener('shopify:block:deselect', (event) => {
   const slider = event.target.closest('[data-bsc-slider]');
   if (!slider) return;
-
   const instance = BestSellingCustomersSlider.instances.get(slider);
-  if (instance && !instance.isHovered && !instance.isTouching && !instance.isDragging) {
-    instance.setPaused(false);
-  }
+  if (instance) instance.setPaused(false);
 });
