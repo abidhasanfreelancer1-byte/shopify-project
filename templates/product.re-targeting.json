@@ -1,0 +1,216 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "custom_liquid_6JWm6p": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\"live-purchase-wrapper\">\n\n  <div class=\"live-badge\">\n    <span class=\"live-dot\"></span>\n    LIVE\n  </div>\n\n  <h2 class=\"live-title\">Happy Customer</h2>\n\n  <div class=\"live-slider\">\n    <div class=\"live-track\">\n\n      <!-- 1 -->\n      <div class=\"customer-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/Pic-24.webp?v=1782144017\">\n        <h4>Bushra Jabeen</h4>\n        <p>📍 Banani, Dhaka 1213</p>\n      </div>\n\n      <!-- 2 -->\n      <div class=\"customer-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/Pic-27.webp?v=1782144017\">\n        <h4>Shurovy Yeasmin</h4>\n        <p>📍 Rayerbazar Dhaka</p>\n      </div>\n\n      <!-- 3 -->\n      <div class=\"customer-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/Pic-25.webp?v=1782144017\">\n        <h4>Prity Roy</h4>\n        <p>📍 Bhola</p>\n      </div>\n\n      <!-- 4 -->\n      <div class=\"customer-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/Pic-23.webp?v=1782144016\">\n        <h4>Nazifa Tahmin</h4>\n        <p>📍 Chittagong</p>\n      </div>\n\n      <!-- 5 -->\n      <div class=\"customer-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/Pic-8.webp?v=1782144016\">\n        <h4>Sakib Mahmud</h4>\n        <p>📍 Bashundhara</p>\n      </div>\n\n      <!-- 6 -->\n      <div class=\"customer-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/Pic-31.webp?v=1782144017\">\n        <h4>Apornita</h4>\n        <p>📍 Jatrabari Dhaka</p>\n      </div>\n\n      <!-- 7 -->\n      <div class=\"customer-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/Pic-30.webp?v=1782144017\">\n        <h4>Barsu</h4>\n        <p>📍 Mirpur 11</p>\n      </div>\n\n      <!-- 8 -->\n      <div class=\"customer-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/Pic-33.webp?v=1782144017\">\n        <h4>Anamika Sultana</h4>\n        <p>📍 Dhaka 1000</p>\n      </div>\n\n      <!-- 9 -->\n      <div class=\"customer-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/Pic-22.webp?v=1782144016\">\n        <h4>Tasnim Zinia</h4>\n        <p>📍 Mirpur Dhaka</p>\n      </div>\n\n      <!-- 10 -->\n      <div class=\"customer-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/Pic-20.webp?v=1782144016\">\n        <h4>Mohona Hassan</h4>\n        <p>📍 Mirpur 10</p>\n      </div>\n\n      <!-- 11 -->\n      <div class=\"customer-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/Pic-21.webp?v=1782144017\">\n        <h4>Lamisa Tabassum</h4>\n        <p>📍 Dhaka 1230</p>\n      </div>\n\n      <!-- 12 -->\n      <div class=\"customer-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/Pic-17.webp?v=1782144016\">\n        <h4>Afia Nisa</h4>\n        <p>📍 Dhaka 1206</p>\n      </div>\n\n      <!-- 13 -->\n      <div class=\"customer-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/Pic-19.webp?v=1782144017\">\n        <h4>Afsana Mim</h4>\n        <p>📍 Bongshal Dhaka</p>\n      </div>\n\n      <!-- 14 -->\n      <div class=\"customer-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/Pic-18.webp?v=1782144017\">\n        <h4>Somaiya Chowdhury</h4>\n        <p>📍 Bogura</p>\n      </div>\n\n      <!-- 15 -->\n      <div class=\"customer-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/Pic-13.webp?v=1782144017\">\n        <h4>Haji Shema</h4>\n        <p>📍 Puran Dhaka</p>\n      </div>\n\n      <!-- 16 -->\n      <div class=\"customer-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/Pic-32.webp?v=1782144017\">\n        <h4>Zaarah Aysha</h4>\n        <p>📍 Barisal Sadar</p>\n      </div>\n\n      <!-- 17 -->\n      <div class=\"customer-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/Pic-29.webp?v=1782144016\">\n        <h4>Nowshin Faria</h4>\n        <p>📍 Uttara Dhaka 1230</p>\n      </div>\n\n      <!-- 18 -->\n      <div class=\"customer-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/Pic-26.webp?v=1782144017\">\n        <h4>Meherun Neela</h4>\n        <p>📍 Cox’s Bazar 4750</p>\n      </div>\n\n      <!-- 19 -->\n      <div class=\"customer-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/Pic-28.webp?v=1782144017\">\n        <h4>Tahmina Zerin</h4>\n        <p>📍 Dhaka 1216</p>\n      </div>\n\n      <!-- 20 -->\n      <div class=\"customer-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/Pic-5.webp?v=1782144017\">\n        <h4>Shefali Akter</h4>\n        <p>📍 Banani Dhaka</p>\n      </div>\n\n      <!-- 21 -->\n      <div class=\"customer-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/Pic-4.webp?v=1782144016\">\n        <h4>Sabrina Rahman</h4>\n        <p>📍 Dhaka 1212</p>\n      </div>\n\n      <!-- 22 -->\n      <div class=\"customer-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/Pic-2.webp?v=1782144016\">\n        <h4>Sehba Tazrin Adrita</h4>\n        <p>📍 Dhaka 1213</p>\n      </div>\n\n      <!-- 23 -->\n      <div class=\"customer-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/Pic-16.webp?v=1782144016\">\n        <h4>Mst. Moriom Atker</h4>\n        <p>📍 Dhaka</p>\n      </div>\n\n      <!-- 24 -->\n      <div class=\"customer-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/Pic-15.webp?v=1782144015\">\n        <h4>Marzan Mahbub</h4>\n        <p>📍 Dhaka 1212</p>\n      </div>\n\n      <!-- 25 -->\n      <div class=\"customer-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/Pic-6.webp?v=1782144016\">\n        <h4>Zoya Zaman</h4>\n        <p>📍 Dhaka 1204</p>\n      </div>\n\n      <!-- 26 -->\n      <div class=\"customer-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/Pic-14.webp?v=1782144017\">\n        <h4>Jinat Rehana</h4>\n        <p>📍 Dhaka 1205</p>\n      </div>\n\n      <!-- 27 -->\n      <div class=\"customer-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/Pic-12.webp?v=1782144016\">\n        <h4>Farjana Islam</h4>\n        <p>📍 Dhaka 1372</p>\n      </div>\n\n      <!-- 28 -->\n      <div class=\"customer-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/Pic-9.webp?v=1782144016\">\n        <h4>Monika Noshin</h4>\n        <p>📍 Dhaka 1206</p>\n      </div>\n\n      <!-- 29 -->\n      <div class=\"customer-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/Pic-10.webp?v=1782144016\">\n        <h4>Masuma Islam</h4>\n        <p>📍 Dhaka 1230</p>\n      </div>\n\n      <!-- 30 -->\n      <div class=\"customer-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/Pic-7.webp?v=1782144016\">\n        <h4>Dristy Shenaz</h4>\n        <p>📍 Mirpur 6</p>\n      </div>\n\n      <!-- 31 -->\n      <div class=\"customer-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/Pic-1.webp?v=1782144017\">\n        <h4>Tisa Akhter</h4>\n        <p>📍 Dhaka</p>\n      </div>\n\n      <!-- 32 -->\n      <div class=\"customer-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/Pic-11.webp?v=1782144016\">\n        <h4>Jannatul Nowshin</h4>\n        <p>📍 Bashantake Dhaka</p>\n      </div>\n\n    </div>\n  </div>\n</div>\n\n<style>\n\n.live-purchase-wrapper{\nposition:relative;\npadding:25px;\nbackground:#ffffff;\nborder-radius:18px;\noverflow:hidden;\nbox-shadow:0 10px 30px rgba(0,0,0,0.08);\n}\n\n.live-title{\ntext-align:center;\nfont-size:26px;\nfont-weight:700;\nmargin-bottom:20px;\n}\n\n.live-badge{\nposition:absolute;\ntop:15px;\nright:15px;\nbackground:#ff0000;\ncolor:#fff;\npadding:3px 12px;\nborder-radius:30px;\nfont-size:10px;\nfont-weight:700;\ndisplay:flex;\nalign-items:center;\ngap:6px;\nz-index:10;\nanimation:pulse 4s infinite;\n}\n\n.live-dot{\nwidth:4px;\nheight:4px;\nbackground:#fff;\nborder-radius:50%;\nanimation:pulse 1s infinite;\n}\n\n@keyframes pulse{\n0%{transform:scale(1);}\n50%{transform:scale(1.5);}\n100%{transform:scale(1);}\n}\n\n.live-slider{\noverflow:hidden;\n}\n\n.live-track{\ndisplay:flex;\ngap:18px;\nwidth:max-content;\nanimation:scroll 40s linear infinite;\n}\n\n.customer-card{\nmin-width:170px;\nbackground:#fff;\nborder-radius:15px;\npadding:12px;\ntext-align:center;\nbox-shadow:0 5px 15px rgba(0,0,0,0.08);\n}\n\n.customer-card img{\nwidth:80px;\nheight:80px;\nborder-radius:50%;\nobject-fit:cover;\nmargin-bottom:10px;\n}\n\n.customer-card h4{\nfont-size:14px;\nmargin:0;\nfont-weight:700;\n}\n\n.customer-card p{\nfont-size:12px;\ncolor:#666;\nmargin-top:5px;\n}\n\n@keyframes scroll{\n0%{transform:translateX(0);}\n100%{transform:translateX(-50%);}\n}\n\n@media(max-width:768px){\n.customer-card{min-width:140px;}\n.live-title{font-size:20px;}\n}\n\n</style>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_U9wj7j": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div id=\"shopify-countdown-wrapper-2515\">\n  <div class=\"countdown-header-2515\">GET 25% OFF TODAY</div>\n\n  <div class=\"countdown-timer-2515\">\n    <div class=\"time-box-2515\">\n      <span id=\"hours-2515\" class=\"time-value-2515\">11</span>\n      <span class=\"time-label-2515\">HRS</span>\n    </div>\n\n    <div class=\"separator-2515\">:</div>\n\n    <div class=\"time-box-2515\">\n      <span id=\"minutes-2515\" class=\"time-value-2515\">15</span>\n      <span class=\"time-label-2515\">MIN</span>\n    </div>\n\n    <div class=\"separator-2515\">:</div>\n\n    <div class=\"time-box-2515\">\n      <span id=\"seconds-2515\" class=\"time-value-2515\">00</span>\n      <span class=\"time-label-2515\">SEC</span>\n    </div>\n  </div>\n</div>\n\n<style>\n#shopify-countdown-wrapper-2515{\n  width:100%;\n  text-align:center;\n  margin:12px 0;\n  font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif;\n}\n\n#shopify-countdown-wrapper-2515 .countdown-header-2515{\n  color:#111111;\n  font-size:22px;\n  font-weight:800;\n  letter-spacing:1px;\n  text-transform:uppercase;\n  margin-bottom:14px;\n}\n\n#shopify-countdown-wrapper-2515 .countdown-timer-2515{\n  display:flex;\n  align-items:center;\n  justify-content:center;\n  gap:8px;\n  flex-wrap:nowrap;\n}\n\n#shopify-countdown-wrapper-2515 .time-box-2515{\n  min-width:45px;\n  padding:7px 10px;\n  background:#ffffff;\n  border:1px solid rgba(255,59,48,.25);\n  border-radius:14px;\n  box-shadow:\n    0 4px 20px rgba(0,0,0,.06),\n    0 0 18px rgba(255,59,48,.10);\n  display:flex;\n  flex-direction:column;\n  align-items:center;\n  justify-content:center;\n}\n\n#shopify-countdown-wrapper-2515 .time-value-2515{\n  color:#ff3b30;\n  font-size:27px;\n  font-weight:700;\n  line-height:1;\n  font-variant-numeric:tabular-nums;\n}\n\n#shopify-countdown-wrapper-2515 .time-label-2515{\n  margin-top:2px;\n  color:#666666;\n  font-size:9px;\n  font-weight:700;\n  letter-spacing:1.2px;\n}\n\n#shopify-countdown-wrapper-2515 .separator-2515{\n  color:#ff3b30;\n  font-size:0px;\n  font-weight:700;\n  line-height:1;\n}\n\n@media (max-width:480px){\n\n  #shopify-countdown-wrapper-2515 .countdown-header-2515{\n    font-size:18px;\n  }\n\n  #shopify-countdown-wrapper-2515 .time-box-2515{\n    min-width:68px;\n    padding:10px;\n  }\n\n  #shopify-countdown-wrapper-2515 .time-value-2515{\n    font-size:26px;\n  }\n\n  #shopify-countdown-wrapper-2515 .separator-2515{\n    font-size:22px;\n  }\n}\n</style>\n\n<script>\n(function() {\n\n  const START_TIME = (11 * 60 * 60) + (15 * 60); // 11:15:00\n\n  let remainingSeconds = START_TIME;\n\n  const hoursEl = document.getElementById('hours-2515');\n  const minutesEl = document.getElementById('minutes-2515');\n  const secondsEl = document.getElementById('seconds-2515');\n\n  function updateTimer() {\n\n    const hours = Math.floor(remainingSeconds / 3600);\n    const minutes = Math.floor((remainingSeconds % 3600) / 60);\n    const seconds = remainingSeconds % 60;\n\n    hoursEl.textContent = String(hours).padStart(2, '0');\n    minutesEl.textContent = String(minutes).padStart(2, '0');\n    secondsEl.textContent = String(seconds).padStart(2, '0');\n\n    if (remainingSeconds <= 0) {\n      remainingSeconds = START_TIME;\n    } else {\n      remainingSeconds--;\n    }\n  }\n\n  updateTimer();\n  setInterval(updateTimer, 1000);\n\n})();\n</script>",
+        "color_scheme": "",
+        "padding_top": 12,
+        "padding_bottom": 20
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "custom_liquid_BiiFQ6": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<style>\n.offer-bar{\n    max-width:420px;\n    margin:10px auto;\n    padding:8px 16px;\n    background:#111111;\n    border:1px solid rgba(255,255,255,0.12);\n    border-radius:10px;\n    display:flex;\n    justify-content:center;\n    align-items:center;\n    gap:12px;\n    font-family:Inter,Arial,sans-serif;\n    box-shadow:\n        0 6px 20px rgba(0,0,0,0.25),\n        inset 0 1px 0 rgba(255,255,255,0.04);\n}\n\n.offer-text{\n    color:#ffffff;\n    font-size:16px;\n    font-weight:600;\n    letter-spacing:0.2px;\n    line-height:1;\n}\n\n.discount{\n    color:#f5d06f;\n    font-weight:700;\n}\n\n.ends{\n    color:rgba(255,255,255,0.7);\n    margin-left:4px;\n}\n\n.countdown{\n    background:transparent;\n    color:#ffffff;\n    border:1px solid rgba(245,208,111,0.4);\n    padding:5px 12px;\n    border-radius:7px;\n    font-size:15px;\n    font-weight:700;\n    min-width:68px;\n    text-align:center;\n    letter-spacing:0.8px;\n    line-height:1.2;\n}\n</style>\n\n<div class=\"offer-bar\">\n    <div class=\"offer-text\">\n        <span class=\"discount\">25% OFF</span>\n        <span class=\"ends\">Ends In</span>\n    </div>\n\n    <div class=\"countdown\" id=\"countdown\">\n        47:00\n    </div>\n</div>\n\n<script>\nlet timeLeft = 47 * 60;\n\nfunction updateCountdown() {\n    const minutes = Math.floor(timeLeft / 60);\n    const seconds = timeLeft % 60;\n\n    document.getElementById(\"countdown\").textContent =\n        String(minutes).padStart(2, \"0\") + \":\" +\n        String(seconds).padStart(2, \"0\");\n\n    if (timeLeft > 0) {\n        timeLeft--;\n    } else {\n        document.getElementById(\"countdown\").textContent = \"00:00\";\n    }\n}\n\nupdateCountdown();\nsetInterval(updateCountdown, 1000);\n</script>"
+          }
+        },
+        "title": {
+          "type": "title",
+          "disabled": true,
+          "settings": {}
+        },
+        "custom_liquid_qpEWjh": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div style=\"\n    font-size: 32px;\n    font-weight: 800;\n    color: #111827;\n    line-height: 1.2;\n    margin-bottom: 10px;\n    letter-spacing: -0.5px;\n\">\n    Magnetic Phone Holder\n</div>"
+          }
+        },
+        "custom_liquid_wFLLg4": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"price-box\">\n\n    <div class=\"price-section\">\n        <span class=\"old-price\">TK 1250</span>\n\n        <span class=\"new-price\">\n            <span class=\"currency\">TK</span> 950\n        </span>\n    </div>\n\n    <div class=\"save-badge\">\n        Save ৳300\n    </div>\n\n</div>\n\n<style>\n.price-box{\n    display:flex;\n    align-items:center;\n    gap:12px;\n    flex-wrap:wrap;\n    font-family:Arial,sans-serif;\n}\n\n.price-section{\n    display:flex;\n    align-items:center;\n}\n\n.old-price{\n    font-size:22px;\n    color:#5b5b5b;\n    text-decoration:line-through;\n    margin-right:10px;\n    font-weight:600;\n}\n\n.new-price{\n    font-size:26px;\n    font-weight:700;\n    color:#000;\n    line-height:1;\n}\n\n.currency{\n    font-size:22px;\n    font-weight:700;\n    margin-right:2px;\n    vertical-align:middle;\n}\n\n.save-badge{\n    background:#000;\n    color:#fff;\n    font-size:15px;\n    font-weight:700;\n    padding:4px 12px;\n    border-radius:30px;\n    box-shadow:0 4px 12px rgba(0,0,0,.25);\n}\n\n@keyframes pulse{\n    0%,100%{\n        transform:scale(1);\n    }\n    50%{\n        transform:scale(1.08);\n    }\n}\n</style>"
+          }
+        },
+        "custom_liquid_b7qx8K": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"whatsapp-contact-box\">\n\n    <div class=\"whatsapp-icon\">\n        <svg xmlns=\"http://www.w3.org/2000/svg\"\n             width=\"20\"\n             height=\"20\"\n             viewBox=\"0 0 24 24\"\n             fill=\"white\">\n            <path d=\"M20.52 3.48A11.8 11.8 0 0012.06 0C5.5 0 .17 5.33.17 11.89c0 2.09.55 4.13 1.59 5.93L0 24l6.37-1.67a11.86 11.86 0 005.69 1.45h.01c6.56 0 11.89-5.33 11.89-11.89 0-3.17-1.23-6.15-3.44-8.41z\"/>\n        </svg>\n    </div>\n\n    <div class=\"whatsapp-number\">\n        WhatsApp: 01706611306\n    </div>\n\n</div>\n\n<style>\n\n.whatsapp-contact-box{\n    display:inline-flex;\n    align-items:center;\n    gap:8px;\n    background:#ffffff;\n    border:2px solid #25D366;\n    border-radius:40px;\n    padding:6px 12px;\n    box-shadow:0 3px 10px rgba(0,0,0,0.10);\n    font-family:Arial, sans-serif;\n}\n\n.whatsapp-icon{\n    width:36px;\n    height:36px;\n    background:#25D366;\n    border-radius:50%;\n    display:flex;\n    align-items:center;\n    justify-content:center;\n    flex-shrink:0;\n}\n\n.whatsapp-icon svg{\n    width:20px;\n    height:20px;\n}\n\n.whatsapp-number{\n    font-size:14px;\n    font-weight:700;\n    color:#111111;\n    line-height:1;\n    letter-spacing:0;\n}\n\n@media (max-width:768px){\n\n    .whatsapp-contact-box{\n        padding:5px 10px;\n        gap:6px;\n    }\n\n    .whatsapp-icon{\n        width:32px;\n        height:32px;\n    }\n\n    .whatsapp-icon svg{\n        width:18px;\n        height:18px;\n    }\n\n    .whatsapp-number{\n        font-size:13px;\n    }\n\n}\n\n</style>"
+          }
+        },
+        "price": {
+          "type": "price",
+          "disabled": true,
+          "settings": {}
+        },
+        "custom_liquid_r6iV4F": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"free-shipping-badge\">\n    <i class=\"fas fa-shipping-fast\"></i>\n    <span>FREE SHIPPING</span>\n</div>\n\n<!-- Font Awesome CDN -->\n<link rel=\"stylesheet\"\nhref=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css\">\n\n<style>\n.free-shipping-badge{\n    display:inline-flex;\n    align-items:center;\n    gap:8px;\n    background:#eef6ff;\n    padding:6px 14px;\n    border-radius:30px;\n    border:1px solid #b8d8ff;\n    font-family:Arial,sans-serif;\n    \n}\n\n.free-shipping-badge i{\n    font-size:20px;\n    color:#000;\n    animation:truckMove 1.5s ease-in-out infinite;\n}\n\n.free-shipping-badge span{\n    font-size:15px;\n    font-weight:700;\n    color:#000;\n    letter-spacing:0.5px;\n}\n\n@keyframes pulse{\n    0%,100%{\n        transform:scale(1);\n        box-shadow:0 0 0 rgba(0,102,255,0);\n    }\n    50%{\n        transform:scale(1.05);\n        box-shadow:0 0 15px rgba(0,102,255,0.3);\n    }\n}\n\n@keyframes truckMove{\n    0%,100%{\n        transform:translateX(0);\n    }\n    50%{\n        transform:translateX(4px);\n    }\n}\n</style>"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true
+          }
+        },
+        "custom_liquid_ccweRF": {
+          "type": "custom_liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "<!-- WhatsApp Floating Chat Button -->\n<a href=\"https://wa.me/8801706611306?text=আমি%20অর্ডার%20করতে%20চাই\"\n   class=\"whatsapp-order-btn\"\n   target=\"_blank\"\n   aria-label=\"WhatsApp Order\">\n\n    <div class=\"whatsapp-text\">\n        💬 Hello! How can i help you?\n    </div>\n\n    <div class=\"whatsapp-icon\">\n        <svg xmlns=\"http://www.w3.org/2000/svg\"\n             width=\"30\"\n             height=\"30\"\n             viewBox=\"0 0 24 24\"\n             fill=\"white\">\n            <path d=\"M20.52 3.48A11.8 11.8 0 0012.06 0C5.5 0 .17 5.33.17 11.89c0 2.09.55 4.13 1.59 5.93L0 24l6.37-1.67a11.86 11.86 0 005.69 1.45h.01c6.56 0 11.89-5.33 11.89-11.89 0-3.17-1.23-6.15-3.44-8.41zM12.07 21.7a9.8 9.8 0 01-5-1.37l-.36-.21-3.78.99 1.01-3.69-.23-.38a9.78 9.78 0 01-1.51-5.15c0-5.42 4.41-9.83 9.84-9.83 2.63 0 5.1 1.02 6.95 2.88a9.77 9.77 0 012.88 6.95c0 5.42-4.41 9.81-9.8 9.81zm5.39-7.36c-.29-.15-1.72-.85-1.99-.95-.27-.1-.46-.15-.66.15-.19.29-.76.95-.93 1.14-.17.2-.34.22-.63.08-.29-.15-1.23-.45-2.34-1.44-.87-.77-1.45-1.72-1.62-2.01-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.2-.29.29-.49.1-.19.05-.37-.02-.51-.08-.15-.66-1.59-.9-2.17-.24-.57-.49-.49-.66-.5h-.56c-.19 0-.51.07-.78.37-.27.29-1.02 1-.99 2.43.02 1.43 1.02 2.82 1.16 3.01.15.2 2.01 3.07 4.87 4.31.68.29 1.21.46 1.62.59.68.22 1.29.19 1.78.12.54-.08 1.72-.7 1.96-1.37.24-.66.24-1.23.17-1.37-.07-.15-.27-.22-.56-.37z\"/>\n        </svg>\n    </div>\n\n</a>\n\n<style>\n\n.whatsapp-order-btn{\n    position:static;\n    right:20px;\n    bottom:20px;\n    display:fixed;\n    align-items:center;\n    z-index:999999;\n    text-decoration:none;\n}\n\n.whatsapp-icon{\n    width:60px;\n    height:60px;\n    background:#25D366;\n    border-radius:50%;\n    display:flex;\n    align-items:center;\n    justify-content:center;\n    box-shadow:0 5px 20px rgba(0,0,0,.25);\n    animation:pulse 2s infinite;\n    flex-shrink:0;\n}\n\n.whatsapp-text{\n    background:#fff;\n    color:#000;\n    font-size:14px;\n    font-weight:600;\n    border-radius:12px;\n    white-space:nowrap;\n    margin-right:10px;\n    overflow:hidden;\n    box-shadow:0 5px 20px rgba(0,0,0,.1);\n\n    max-width:0;\n    opacity:0;\n    padding:10px 0;\n\n    animation:textSlide 5s infinite;\n}\n\n.whatsapp-text::after{\n    content:\"\";\n    position:absolute;\n}\n\n@keyframes pulse{\n    0%{\n        transform:scale(1);\n        box-shadow:0 0 0 0 rgba(37,211,102,.7);\n    }\n    70%{\n        transform:scale(1.08);\n        box-shadow:0 0 0 15px rgba(37,211,102,0);\n    }\n    100%{\n        transform:scale(1);\n    }\n}\n\n@keyframes textSlide{\n\n    0%,20%,100%{\n        max-width:0;\n        opacity:0;\n        padding-left:0;\n        padding-right:0;\n        margin-right:0;\n    }\n\n    30%,80%{\n        max-width:250px;\n        opacity:1;\n        padding-left:16px;\n        padding-right:16px;\n        margin-right:10px;\n    }\n}\n\n/* Mobile */\n@media(max-width:768px){\n\n    .whatsapp-order-btn{\n        right:15px;\n        bottom:15px;\n    }\n\n    .whatsapp-icon{\n        width:55px;\n        height:55px;\n    }\n\n    .whatsapp-text{\n        font-size:13px;\n    }\n\n}\n\n</style>"
+          }
+        },
+        "custom_liquid_Eh7ac6": {
+          "type": "custom_liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "<hr style=\"border: none; border-top: 2px dotted #999; margin: 20px 0;\">"
+          }
+        },
+        "collapsible_tab_mA4Yxd": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Product Specification",
+            "icon": "clipboard",
+            "content": "<p><strong>Universal 360°Rotate Vacuum Suction Cup Magnetic Phone Holder (ZF71)</strong></p><p><strong>🎯</strong> <strong>Specifications</strong></p><ul><li><strong>Product Type</strong>: Magnetic Phone Holder</li><li><strong>Model</strong>: ZF71</li><li><strong>Material</strong>: Alloy Metal</li><li><strong>Compatibility</strong>: Universal (সব স্মার্টফোন)</li><li><strong>Position</strong>: Portable Mount</li><li><strong>Origin</strong>: Guangdong, China</li><li><strong>Warranty</strong>: 1 Year</li></ul><p><strong>🎯 Perfect For</strong></p><ul><li>Car Dashboard Use</li><li>Gym Equipment</li><li>Office Desk</li><li>Kitchen Wall</li><li>Glass Surface</li></ul>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_zHC4WD": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Return & Refund Gurantee",
+            "icon": "return",
+            "content": "<p>🔄 Enjoy a 48-Hour Easy Return Guarantee for a safe shopping experience. Plus, selected products include up to 1 Year Warranty for long-term peace of mind.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_rznk48": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "FAQ",
+            "icon": "box",
+            "content": "<h4><strong>1. Is this phone holder compatible with all phones?</strong></h4><p>Yes, this magnetic phone holder is<br/>universally compatible and can be used with almost all smartphones.</p><h4><strong>2. Will the suction cup stick firmly on all surfaces?</strong></h4><p>It works best on smooth surfaces like:</p><ul><li>Car dashboard</li><li>Glass</li><li>Mirror</li><li>Tiles</li><li>Office desk</li><li>Kitchen wall</li></ul><h4><strong>3. Can I use it inside a car?</strong></h4><p>Absolutely! It is perfect for:</p><ul><li>Car dashboard</li><li>Windshield</li><li>Navigation use</li><li>Hands-free calling</li></ul><h4><strong>4. What materials is the holder made from?</strong></h4><p>The ZF71 is made from premium alloy metal for<br/>better durability and a premium look.</p><h4><strong>5. Can I use it while making content or recording videos?</strong></h4><p>Yes! Many users use it for:</p><ul><li>Content creation</li><li>Video recording</li><li>Watching videos</li><li>Online classes</li><li>Video calls</li></ul>",
+            "page": ""
+          }
+        },
+        "custom_liquid_x3TQbt": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<!-- ===== Premium Bangladesh Review Slider ===== -->\n\n<style>\n.ts-review-section{\n  width:100%;\n  overflow:hidden;\n  padding:40px 0;\n  background:#f8f8f8;\n}\n\n.ts-review-title{\n  text-align:center;\n  font-size:28px;\n  font-weight:700;\n  margin-bottom:28px;\n  color:#111;\n  font-family:Arial,sans-serif;\n}\n\n.ts-review-wrapper{\n  overflow:hidden;\n  cursor:grab;\n  width:100%;\n}\n\n.ts-review-wrapper:active{\n  cursor:grabbing;\n}\n\n.ts-review-slider{\n  display:flex;\n  width:max-content;\n  animation:scrollReviews 45s linear infinite;\n  user-select:none;\n}\n\n.ts-review-wrapper:hover .ts-review-slider{\n  animation-play-state:paused;\n}\n\n.ts-review-card{\n  width:300px;\n  min-height:210px;\n  background:#fff;\n  border-radius:20px;\n  padding:18px;\n  margin:0 12px;\n  box-shadow:0 5px 18px rgba(0,0,0,0.08);\n  flex-shrink:0;\n}\n\n.ts-review-top{\n  display:flex;\n  align-items:flex-start;\n  justify-content:space-between;\n  margin-bottom:14px;\n}\n\n.ts-review-user{\n  display:flex;\n  align-items:flex-start;\n}\n\n.ts-review-user img{\n  width:52px;\n  height:52px;\n  border-radius:50%;\n  object-fit:cover;\n  margin-right:12px;\n}\n\n.ts-review-info{\n  display:flex;\n  flex-direction:column;\n}\n\n.ts-review-name{\n  font-size:15px;\n  font-weight:700;\n  color:#111;\n  margin-bottom:4px;\n  font-family:Arial,sans-serif;\n}\n\n.ts-review-stars{\n  color:#ffb400;\n  font-size:16px;\n  margin-bottom:5px;\n  letter-spacing:1px;\n}\n\n.ts-review-platform{\n  font-size:12px;\n  color:#777;\n  display:flex;\n  align-items:center;\n  gap:5px;\n  font-family:Arial,sans-serif;\n}\n\n.ts-review-platform img{\n  width:14px;\n  height:14px;\n}\n\n.ts-review-text{\n  font-size:15px;\n  color:#333;\n  line-height:1.7;\n  font-family:Arial,sans-serif;\n}\n\n@keyframes scrollReviews{\n  0%{\n    transform:translateX(0);\n  }\n  100%{\n    transform:translateX(-50%);\n  }\n}\n\n@media(max-width:768px){\n\n  .ts-review-card{\n    width:260px;\n    min-height:200px;\n  }\n\n  .ts-review-title{\n    font-size:22px;\n  }\n\n}\n</style>\n\n<div class=\"ts-review-section\">\n\n  <div class=\"ts-review-title\">\n    Customer Reviews\n  </div>\n\n  <div class=\"ts-review-wrapper\" id=\"reviewWrapper\">\n\n    <div class=\"ts-review-slider\" id=\"reviewSlider\">\n\n      <!-- Review 1 -->\n      <div class=\"ts-review-card\">\n\n        <div class=\"ts-review-top\">\n\n          <div class=\"ts-review-user\">\n\n            <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/sdhgsheh.webp?v=1778927272\">\n\n            <div class=\"ts-review-info\">\n\n              <div class=\"ts-review-name\">Shaila Parvin Sharothy</div>\n\n              <div class=\"ts-review-stars\">★★★★★</div>\n\n              <div class=\"ts-review-platform\">\n                <img src=\"https://cdn-icons-png.flaticon.com/512/733/733547.png\">\n                Facebook\n              </div>\n\n            </div>\n\n          </div>\n\n        </div>\n\n        <div class=\"ts-review-text\">\n          Product ta use kore onek premium feel paichi.\n          Driving er somoy phone perfectly stable thake.\n        </div>\n\n      </div>\n\n      <!-- Review 2 -->\n      <div class=\"ts-review-card\">\n\n        <div class=\"ts-review-top\">\n\n          <div class=\"ts-review-user\">\n\n            <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/sdsgs.webp?v=1778927272\">\n\n            <div class=\"ts-review-info\">\n\n              <div class=\"ts-review-name\">Maisha</div>\n\n              <div class=\"ts-review-stars\">★★★★★</div>\n\n              <div class=\"ts-review-platform\">\n                <img src=\"https://cdn-icons-png.flaticon.com/512/2111/2111463.png\">\n                Instagram\n              </div>\n\n            </div>\n\n          </div>\n\n        </div>\n\n        <div class=\"ts-review-text\">\n          Magnet power ta really impressive.\n          Rough road eo phone move kore na.\n        </div>\n\n      </div>\n\n      <!-- Review 3 -->\n      <div class=\"ts-review-card\">\n\n        <div class=\"ts-review-top\">\n\n          <div class=\"ts-review-user\">\n\n            <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/ssdfgew.webp?v=1778927272\">\n\n            <div class=\"ts-review-info\">\n\n              <div class=\"ts-review-name\">Marma Way Sing</div>\n\n              <div class=\"ts-review-stars\">★★★★★</div>\n\n              <div class=\"ts-review-platform\">\n                <img src=\"https://cdn-icons-png.flaticon.com/512/733/733585.png\">\n                WhatsApp\n              </div>\n\n            </div>\n\n          </div>\n\n        </div>\n\n        <div class=\"ts-review-text\">\n          Dashboard e setup kora onek easy chilo.\n          Quality expected er cheye better.\n        </div>\n\n      </div>\n\n      <!-- Review 4 -->\n      <div class=\"ts-review-card\">\n\n        <div class=\"ts-review-top\">\n\n          <div class=\"ts-review-user\">\n\n            <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/dfgsgreg.webp?v=1778927272\">\n\n            <div class=\"ts-review-info\">\n\n              <div class=\"ts-review-name\">Döre Môń</div>\n\n              <div class=\"ts-review-stars\">★★★★★</div>\n\n              <div class=\"ts-review-platform\">\n                <img src=\"https://cdn-icons-png.flaticon.com/512/733/733547.png\">\n                Facebook\n              </div>\n\n            </div>\n\n          </div>\n\n        </div>\n\n        <div class=\"ts-review-text\">\n          360 rotate feature ta daily use e onek helpful.\n          Navigation use kora ekhon easier.\n        </div>\n\n      </div>\n\n      <!-- Review 5 -->\n      <div class=\"ts-review-card\">\n\n        <div class=\"ts-review-top\">\n\n          <div class=\"ts-review-user\">\n\n            <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/asgawgwe.webp?v=1778927272\">\n\n            <div class=\"ts-review-info\">\n\n              <div class=\"ts-review-name\">Shorna Islam Eikra</div>\n\n              <div class=\"ts-review-stars\">★★★★★</div>\n\n              <div class=\"ts-review-platform\">\n                <img src=\"https://cdn-icons-png.flaticon.com/512/2111/2111463.png\">\n                Instagram\n              </div>\n\n            </div>\n\n          </div>\n\n        </div>\n\n        <div class=\"ts-review-text\">\n          Delivery fast chilo ar packaging o beautiful.\n          Product ta fully worth the money.\n        </div>\n\n      </div>\n\n      <!-- Review 6 -->\n      <div class=\"ts-review-card\">\n\n        <div class=\"ts-review-top\">\n\n          <div class=\"ts-review-user\">\n\n            <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/sgsge.webp?v=1778927272\">\n\n            <div class=\"ts-review-info\">\n\n              <div class=\"ts-review-name\">MST. ELMA</div>\n\n              <div class=\"ts-review-stars\">★★★★★</div>\n\n              <div class=\"ts-review-platform\">\n                <img src=\"https://cdn-icons-png.flaticon.com/512/733/733585.png\">\n                WhatsApp\n              </div>\n\n            </div>\n\n          </div>\n\n        </div>\n\n        <div class=\"ts-review-text\">\n          Long drive er somoy phone ekdom secure thake.\n          Build quality ta really solid.\n        </div>\n\n      </div>\n\n      <!-- Review 7 -->\n      <div class=\"ts-review-card\">\n\n        <div class=\"ts-review-top\">\n\n          <div class=\"ts-review-user\">\n\n            <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/sdfsfsf.webp?v=1778927272\">\n\n            <div class=\"ts-review-info\">\n\n              <div class=\"ts-review-name\">Mariya</div>\n\n              <div class=\"ts-review-stars\">★★★★★</div>\n\n              <div class=\"ts-review-platform\">\n                <img src=\"https://cdn-icons-png.flaticon.com/512/733/733547.png\">\n                Facebook\n              </div>\n\n            </div>\n\n          </div>\n\n        </div>\n\n        <div class=\"ts-review-text\">\n          Product ta dekhte classy lage.\n          Car interior er sathe perfectly match kore.\n        </div>\n\n      </div>\n\n      <!-- Review 8 -->\n      <div class=\"ts-review-card\">\n\n        <div class=\"ts-review-top\">\n\n          <div class=\"ts-review-user\">\n\n            <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/ddfsgg.webp?v=1778927272\">\n\n            <div class=\"ts-review-info\">\n\n              <div class=\"ts-review-name\">MD Abdul Alim</div>\n\n              <div class=\"ts-review-stars\">★★★★★</div>\n\n              <div class=\"ts-review-platform\">\n                <img src=\"https://cdn-icons-png.flaticon.com/512/2111/2111463.png\">\n                Instagram\n              </div>\n\n            </div>\n\n          </div>\n\n        </div>\n\n        <div class=\"ts-review-text\">\n          Holder ta strong and reliable.\n          Daily driving e use kore onek satisfied.\n        </div>\n\n      </div>\n\n      <!-- Duplicate Reviews -->\n\n      <div class=\"ts-review-card\">\n\n        <div class=\"ts-review-top\">\n\n          <div class=\"ts-review-user\">\n\n            <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/sdhgsheh.webp?v=1778927272\">\n\n            <div class=\"ts-review-info\">\n\n              <div class=\"ts-review-name\">Shaila Parvin Sharothy</div>\n\n              <div class=\"ts-review-stars\">★★★★★</div>\n\n              <div class=\"ts-review-platform\">\n                <img src=\"https://cdn-icons-png.flaticon.com/512/733/733547.png\">\n                Facebook\n              </div>\n\n            </div>\n\n          </div>\n\n        </div>\n\n        <div class=\"ts-review-text\">\n          Product ta use kore onek premium feel paichi.\n          Driving er somoy phone perfectly stable thake.\n        </div>\n\n      </div>\n\n      <div class=\"ts-review-card\">\n\n        <div class=\"ts-review-top\">\n\n          <div class=\"ts-review-user\">\n\n            <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/sdsgs.webp?v=1778927272\">\n\n            <div class=\"ts-review-info\">\n\n              <div class=\"ts-review-name\">Maisha</div>\n\n              <div class=\"ts-review-stars\">★★★★★</div>\n\n              <div class=\"ts-review-platform\">\n                <img src=\"https://cdn-icons-png.flaticon.com/512/2111/2111463.png\">\n                Instagram\n              </div>\n\n            </div>\n\n          </div>\n\n        </div>\n\n        <div class=\"ts-review-text\">\n          Magnet power ta really impressive.\n          Rough road eo phone move kore na.\n        </div>\n\n      </div>\n\n    </div>\n\n  </div>\n\n</div>\n\n<script>\nconst wrapper = document.getElementById('reviewWrapper');\nconst slider = document.getElementById('reviewSlider');\n\nlet isDown = false;\nlet startX;\nlet scrollLeft;\n\nwrapper.addEventListener('mousedown', (e) => {\n  isDown = true;\n  wrapper.style.cursor = 'grabbing';\n  slider.style.animationPlayState = 'paused';\n\n  startX = e.pageX - wrapper.offsetLeft;\n  scrollLeft = wrapper.scrollLeft;\n});\n\nwrapper.addEventListener('mouseleave', () => {\n  isDown = false;\n  wrapper.style.cursor = 'grab';\n  slider.style.animationPlayState = 'running';\n});\n\nwrapper.addEventListener('mouseup', () => {\n  isDown = false;\n  wrapper.style.cursor = 'grab';\n  slider.style.animationPlayState = 'running';\n});\n\nwrapper.addEventListener('mousemove', (e) => {\n  if(!isDown) return;\n\n  e.preventDefault();\n\n  const x = e.pageX - wrapper.offsetLeft;\n  const walk = (x - startX) * 2;\n\n  wrapper.scrollLeft = scrollLeft - walk;\n});\n\nwrapper.addEventListener('touchstart', (e) => {\n  slider.style.animationPlayState = 'paused';\n\n  startX = e.touches[0].pageX;\n  scrollLeft = wrapper.scrollLeft;\n});\n\nwrapper.addEventListener('touchmove', (e) => {\n  const x = e.touches[0].pageX;\n  const walk = (x - startX) * 2;\n\n  wrapper.scrollLeft = scrollLeft - walk;\n});\n\nwrapper.addEventListener('touchend', () => {\n  slider.style.animationPlayState = 'running';\n});\n</script>"
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "vendor",
+        "custom_liquid_BiiFQ6",
+        "title",
+        "custom_liquid_qpEWjh",
+        "custom_liquid_wFLLg4",
+        "custom_liquid_b7qx8K",
+        "price",
+        "custom_liquid_r6iV4F",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "custom_liquid_ccweRF",
+        "custom_liquid_Eh7ac6",
+        "collapsible_tab_mA4Yxd",
+        "collapsible_tab_zHC4WD",
+        "collapsible_tab_rznk48",
+        "custom_liquid_x3TQbt",
+        "description"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "stacked",
+        "mobile_thumbnails": "hide",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    }
+  },
+  "order": [
+    "custom_liquid_6JWm6p",
+    "custom_liquid_U9wj7j",
+    "main",
+    "related-products"
+  ]
+}

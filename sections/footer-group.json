@@ -1,0 +1,47 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "scheme-1",
+        "newsletter_enable": true,
+        "newsletter_heading": "Subscribe to our emails",
+        "enable_follow_on_shop": true,
+        "show_social": true,
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "payment_enable": true,
+        "show_policy": true,
+        "margin_top": 0,
+        "padding_top": 100,
+        "padding_bottom": 36
+      }
+    },
+    "custom_liquid_3dXQBW": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\"lux-footer\">\n\n  <div class=\"lux-footer-wrapper\">\n\n    <!-- Brand -->\n    <div class=\"lux-brand\">\n\n      <!-- Brand Icon -->\n      <img \n        src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/5555555.png?v=1778674857\" \n        alt=\"Trendy Shopz Logo\"\n        class=\"brand-logo\"\n      >\n\n      <!-- Stylish Brand Name -->\n      <h1 class=\"brand-text\">\n        Trendy Shopz\n      </h1>\n\n    </div>\n\n    <!-- Footer Columns -->\n    <div class=\"footer-columns\">\n\n      <!-- Quick Links -->\n      <div class=\"lux-column\">\n        <h3>Quick Links</h3>\n\n        <a href=\"#\">Home</a>\n        <a href=\"#\">Shop</a>\n        <a href=\"#\">Collections</a>\n        <a href=\"#\">New Arrivals</a>\n      </div>\n\n      <!-- About -->\n      <div class=\"lux-column\">\n        <h3>About Us</h3>\n\n        <a href=\"#\">Our Story</a>\n        <a href=\"#\">Sustainability</a>\n        <a href=\"#\">Careers</a>\n        <a href=\"#\">Blog</a>\n      </div>\n\n      <!-- Support -->\n      <div class=\"lux-column\">\n        <h3>Support</h3>\n\n        <a href=\"#\">Contact</a>\n        <a href=\"#\">Shipping Info</a>\n        <a href=\"#\">Return Policy</a>\n        <a href=\"#\">FAQ</a>\n      </div>\n\n    </div>\n\n  </div>\n\n  <!-- Divider -->\n  <div class=\"footer-line\"></div>\n\n  <!-- Bottom -->\n  <div class=\"footer-bottom\">\n\n    <!-- Social -->\n    <div class=\"footer-social\">\n\n      <!-- Facebook -->\n      <a href=\"#\">\n        <svg viewBox=\"0 0 24 24\">\n          <path d=\"M22 12a10 10 0 1 0-11.5 9.9v-7h-2.1v-2.9h2.1V9.8c0-2.1 1.2-3.3 3.2-3.3.9 0 1.9.2 1.9.2v2.1h-1.1c-1.1 0-1.4.7-1.4 1.4v1.7h2.5l-.4 2.9h-2.1v7A10 10 0 0 0 22 12z\"/>\n        </svg>\n      </a>\n\n      <!-- Instagram -->\n      <a href=\"#\">\n        <svg viewBox=\"0 0 24 24\">\n          <path d=\"M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm5 5.2A4.8 4.8 0 1 1 7.2 12 4.8 4.8 0 0 1 12 7.2zm6-1.3a1.2 1.2 0 1 1-1.2 1.2A1.2 1.2 0 0 1 18 5.9z\"/>\n        </svg>\n      </a>\n\n      <!-- YouTube -->\n      <a href=\"#\">\n        <svg viewBox=\"0 0 24 24\">\n          <path d=\"M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.8zM9.5 15.5v-7l6 3.5-6 3.5z\"/>\n        </svg>\n      </a>\n\n      <!-- TikTok -->\n      <a href=\"#\">\n        <svg viewBox=\"0 0 24 24\">\n          <path d=\"M19.6 5.4A5.5 5.5 0 0 1 16 4v8.5a4.5 4.5 0 1 1-4.5-4.5c.3 0 .6 0 .9.1v2.3a2.2 2.2 0 1 0 1.4 2.1V0h2.2a3.3 3.3 0 0 0 3.3 3.3z\"/>\n        </svg>\n      </a>\n\n    </div>\n\n    <p>© 2026 TrendyShopz. All Rights Reserved.</p>\n\n  </div>\n\n</div>\n\n<style>\n\n/* ===== FOOTER ===== */\n\n.lux-footer{\n  background:#050505;\n  padding:6px 18px 16px;\n  color:#fff;\n  text-align:center;\n  overflow:hidden;\n  border-top-left-radius:22px;\n  border-top-right-radius:22px;\n  margin-top:18px;\n  border-top:1px solid #1f1f1f;\n}\n\n/* ===== WRAPPER ===== */\n\n.lux-footer-wrapper{\n  display:flex;\n  flex-direction:column;\n  align-items:center;\n  justify-content:center;\n  gap:28px;\n}\n\n/* ===== BRAND ===== */\n\n.lux-brand{\n  max-width:290px;\n  display:flex;\n  flex-direction:column;\n  align-items:center;\n  justify-content:center;\n}\n\n/* ===== BRAND LOGO ===== */\n\n.brand-logo{\n  width:220px;\n  height:auto;\n  margin-top:-18px;\n  margin-bottom:-22px;\n  object-fit:contain;\n  animation:logoDrop 1s ease;\n  transition:0.4s ease;\n}\n\n.brand-logo:hover{\n  transform:scale(1.05) rotate(-2deg);\n}\n\n/* ===== LOGO ANIMATION ===== */\n\n@keyframes logoDrop{\n\n  0%{\n    opacity:0;\n    transform:translateY(-35px);\n  }\n\n  100%{\n    opacity:1;\n    transform:translateY(0);\n  }\n\n}\n\n/* ===== BRAND TEXT ===== */\n\n.brand-text{\n  font-size:40px;\n  font-weight:600;\n  color:#fff;\n  font-family:'Brush Script MT', cursive;\n  letter-spacing:1px;\n  margin-top:0;\n  margin-bottom:2px;\n  transition:0.4s ease;\n  line-height:1;\n  animation:brandDrop 1.2s ease;\n}\n\n.brand-text:hover{\n  transform:scale(1.03) rotate(-2deg);\n  color:#f5f5f5;\n}\n\n/* ===== BRAND ANIMATION ===== */\n\n@keyframes brandDrop{\n\n  0%{\n    opacity:0;\n    transform:translateY(-35px);\n  }\n\n  100%{\n    opacity:1;\n    transform:translateY(0);\n  }\n\n}\n\n/* ===== FOOTER COLUMNS ===== */\n\n.footer-columns{\n  width:100%;\n  display:flex;\n  justify-content:space-between;\n  align-items:flex-start;\n  gap:20px;\n  flex-wrap:wrap;\n}\n\n/* ===== COLUMN ===== */\n\n.lux-column{\n  flex:1;\n  min-width:120px;\n  display:flex;\n  flex-direction:column;\n  align-items:center;\n}\n\n.lux-column h3{\n  font-size:18px;\n  margin-bottom:12px;\n  font-weight:800;\n  color:#fff;\n  transition:0.35s ease;\n}\n\n.lux-column h3:hover{\n  transform:translateY(-2px);\n}\n\n/* ===== SUB LINKS ===== */\n\n.lux-column a{\n  display:block;\n  color:#b8b8b8;\n  text-decoration:none;\n  margin-bottom:10px;\n  transition:0.35s ease;\n  font-size:16px;\n  font-weight:500;\n  letter-spacing:0.3px;\n}\n\n.lux-column a:hover{\n  color:#fff;\n  transform:translateX(4px);\n}\n\n/* ===== DIVIDER ===== */\n\n.footer-line{\n  width:100%;\n  height:1px;\n  background:#1b1b1b;\n  margin:22px 0 14px;\n}\n\n/* ===== FOOTER BOTTOM ===== */\n\n.footer-bottom{\n  display:flex;\n  flex-direction:column;\n  align-items:center;\n  gap:12px;\n}\n\n/* ===== SOCIAL ===== */\n\n.footer-social{\n  display:flex;\n  justify-content:center;\n  gap:12px;\n}\n\n/* ===== SOCIAL BOX ===== */\n\n.footer-social a{\n  width:38px;\n  height:38px;\n  border:1px solid #2a2a2a;\n  border-radius:50%;\n  display:flex;\n  align-items:center;\n  justify-content:center;\n  transition:0.4s ease;\n  background:#111;\n  animation:iconDrop 1s ease;\n}\n\n/* ===== ICON ANIMATION ===== */\n\n@keyframes iconDrop{\n\n  0%{\n    opacity:0;\n    transform:translateY(-40px) rotate(-180deg);\n  }\n\n  100%{\n    opacity:1;\n    transform:translateY(0) rotate(0deg);\n  }\n\n}\n\n.footer-social a:hover{\n  transform:translateY(-3px);\n  background:#1d1d1d;\n}\n\n/* ===== ICON ===== */\n\n.footer-social svg{\n  width:16px;\n  height:16px;\n  fill:#fff;\n}\n\n/* TikTok */\n.footer-social a:last-child svg{\n  width:18px;\n  height:18px;\n}\n\n/* ===== COPYRIGHT ===== */\n\n.footer-bottom p{\n  color:#a0a0a0;\n  font-size:14px;\n  font-weight:500;\n  letter-spacing:0.4px;\n  margin:0;\n}\n\n/* ===== MOBILE ===== */\n\n@media(max-width:768px){\n\n  .footer-columns{\n    flex-direction:row;\n    justify-content:space-between;\n    gap:10px;\n  }\n\n  .lux-column h3{\n    font-size:16px;\n  }\n\n  .lux-column a{\n    font-size:14px;\n  }\n\n}\n\n</style>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "footer",
+    "custom_liquid_3dXQBW"
+  ]
+}

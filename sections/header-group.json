@@ -1,0 +1,48 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "custom_liquid_7yhyCP": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<!-- ===== TOP ANNOUNCEMENT BAR ===== -->\n\n<div class=\"top-announcement\">\n\n  <div class=\"announcement-slider\">\n\n    <span>🚚 Free Delivery All Over Bangladesh</span>\n\n    <span>🔥 Premium Fashion With Trusted Quality</span>\n\n    <span>💯 Cash On Delivery Available</span>\n\n    <span>⚡ Fast Shipping Within 2-5 Days</span>\n\n    <span>🎁 Exclusive Offers For New Customers</span>\n\n  </div>\n\n</div>\n\n<style>\n\n/* Remove Shopify Section Spacing */\n.shopify-section{\n  margin:0 !important;\n  padding:0 !important;\n}\n\n/* ===== TOP BAR ===== */\n\n.top-announcement{\n  width:100%;\n  background:#fff;\n  overflow:hidden;\n\n  padding:8px 0;\n\n  border:none;\n\n  line-height:1;\n\n  margin:0;\n}\n\n/* ===== SLIDER ===== */\n\n.announcement-slider{\n  display:flex;\n  width:max-content;\n\n  animation:slideText 22s linear infinite;\n}\n\n/* ===== TEXT ===== */\n\n.announcement-slider span{\n  color:#000;\n  font-size:13px;\n  font-weight:600;\n  letter-spacing:0.5px;\n  font-family:'Poppins', sans-serif;\n\n  padding:0 55px;\n\n  white-space:nowrap;\n}\n\n/* ===== ANIMATION ===== */\n\n@keyframes slideText{\n\n  0%{\n    transform:translateX(0);\n  }\n\n  100%{\n    transform:translateX(-50%);\n  }\n\n}\n\n</style>",
+        "color_scheme": "scheme-2",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "logo_position": "middle-left",
+        "mobile_logo_position": "center",
+        "menu": "main-menu",
+        "menu_type_desktop": "dropdown",
+        "sticky_header_type": "on-scroll-up",
+        "show_line_separator": true,
+        "color_scheme": "scheme-3",
+        "menu_color_scheme": "scheme-1",
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "enable_customer_avatar": true,
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "custom_liquid_7yhyCP",
+    "header"
+  ]
+}

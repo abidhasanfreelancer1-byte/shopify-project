@@ -1,0 +1,200 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "custom_liquid_wCVRPy": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div style=\"display:flex; align-items:center; gap:6px; margin-top:10px; font-family:Arial, sans-serif;\">\n  \n  <span style=\"color:#f5a623; font-size:20px;\">\n    ★ ★ ★ ★ ★\n  </span>\n  \n  <span style=\"font-size:16px; font-weight:bold; color:#222;\">\n    4.7/5\n  </span>\n\n  <span style=\"font-size:14px; color:#777;\">\n    (341 Reviews)\n  </span>\n\n</div>"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "custom_liquid_kPhepe": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div style=\"display:inline-flex; align-items:center; gap:8px; \nbackground:#f4fff4; padding:10px 16px; border-radius:30px; \nborder:1px solid #d6f5d6; font-family:Arial, sans-serif;\">\n\n  <i class=\"fas fa-shipping-fast\" \n     style=\"font-size:20px; color:#1a7f37;\"></i>\n\n  <span style=\"font-size:15px; font-weight:700; color:#1a7f37;\">\n    FREE SHIPPING\n  </span>\n\n</div>\n\n<!-- Font Awesome CDN -->\n<link rel=\"stylesheet\" \nhref=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css\">"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "custom_liquid_EgApwW": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div style=\"margin-top:15px; text-align:left;\">\n\n  <!-- Facebook -->\n  <a href=\"https://www.facebook.com/trendyshopzbd\" target=\"_blank\" \n     style=\"margin-right:8px; text-decoration:none;\">\n    <img src=\"https://cdn-icons-png.flaticon.com/512/20/20837.png\" \n         alt=\"Facebook\" width=\"22\"\n         style=\"filter: brightness(0);\">\n  </a>\n\n  <!-- Instagram -->\n  <a href=\"https://instagram.com/yourprofile\" target=\"_blank\" \n     style=\"margin-right:8px; text-decoration:none;\">\n    <img src=\"https://cdn-icons-png.flaticon.com/512/87/87390.png\" \n         alt=\"Instagram\" width=\"22\"\n         style=\"filter: brightness(0);\">\n  </a>\n\n  <!-- WhatsApp -->\n  <a href=\"https://wa.me/8801706611306\" target=\"_blank\" \n     style=\"text-decoration:none;\">\n    <img src=\"https://cdn-icons-png.flaticon.com/512/1384/1384023.png\" \n         alt=\"WhatsApp\" width=\"22\"\n         style=\"filter: brightness(0);\">\n  </a>\n\n</div>"
+          }
+        },
+        "custom_liquid_P4AXrG": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<hr style=\"border: none; border-top: 2px dotted #999; margin: 20px 0;\">"
+          }
+        },
+        "collapsible_tab_L4cnC3": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "{{ block.settings.page.title }}Product Specification",
+            "icon": "clipboard",
+            "content": "<p><strong>Universal 360°Rotate Vacuum Suction Cup Magnetic Phone Holder (ZF71)</strong></p><p><strong>🎯</strong> <strong>Specifications</strong></p><ul><li><strong>Product Type</strong>: Magnetic Phone Holder</li><li><strong>Model</strong>: ZF71</li><li><strong>Material</strong>: Alloy Metal</li><li><strong>Compatibility</strong>: Universal (সব স্মার্টফোন)</li><li><strong>Position</strong>: Portable Mount</li><li><strong>Origin</strong>: Guangdong, China</li><li><strong>Warranty</strong>: 1 Year</li></ul><p><strong>🎯 Perfect For</strong></p><ul><li>Car Dashboard Use</li><li>Gym Equipment</li><li>Office Desk</li><li>Kitchen Wall</li><li>Glass Surface</li></ul>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_xFnFn9": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Delivery Time",
+            "icon": "stopwatch",
+            "content": "<p>📍 <strong>Inside Dhaka:</strong> Delivery within 1–2 working days.</p><p>📍 <strong>Outside Dhaka:</strong> Delivery within 2–3 working days.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_xrUJ3K": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Return & Refund Gurantee",
+            "icon": "return",
+            "content": "<p>🔄 Enjoy a 48-Hour Easy Return Guarantee for a safe shopping experience. Plus, selected products include up to 1 Year Warranty for long-term peace of mind.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_w7tnDe": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "FAQ",
+            "icon": "box",
+            "content": "<h4><strong>1. Is this phone holder compatible with all phones?</strong></h4><p>Yes, this magnetic phone holder is<br/>universally compatible and can be used with almost all smartphones.</p><h4><strong>2. Will the suction cup stick firmly on all surfaces?</strong></h4><p>It works best on smooth surfaces like:</p><ul><li>Car dashboard </li><li>Glass </li><li>Mirror </li><li>Tiles </li><li>Office desk </li><li>Kitchen wall </li></ul><h4><strong>3. Can I use it inside a car?</strong></h4><p>Absolutely! It is perfect for:</p><ul><li>Car dashboard </li><li>Windshield </li><li>Navigation use </li><li>Hands-free calling</li></ul><h4><strong>4. What materials is the holder made from?</strong></h4><p>The ZF71 is made from premium alloy metal for<br/>better durability and a premium look.</p><h4><strong>5. Can I use it while making content or recording videos?</strong></h4><p>Yes! Many users use it for:</p><ul><li>Content creation </li><li>Video recording </li><li>Watching videos </li><li>Online classes </li><li>Video calls</li></ul>",
+            "page": ""
+          }
+        },
+        "icon_with_text_t8V7XG": {
+          "type": "icon-with-text",
+          "disabled": true,
+          "settings": {
+            "layout": "vertical",
+            "icon_1": "clipboard",
+            "heading_1": "<strong>PRODUCT SPECIFICATION</strong>",
+            "icon_2": "none",
+            "heading_2": "",
+            "icon_3": "none",
+            "heading_3": ""
+          }
+        },
+        "custom_liquid_DxbnTQ": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<!-- ===== Premium Bangladesh Review Slider ===== -->\n\n<style>\n.ts-review-section{\n  width:100%;\n  overflow:hidden;\n  padding:40px 0;\n  background:#f8f8f8;\n}\n\n.ts-review-title{\n  text-align:center;\n  font-size:28px;\n  font-weight:700;\n  margin-bottom:28px;\n  color:#111;\n  font-family:Arial,sans-serif;\n}\n\n.ts-review-wrapper{\n  overflow:hidden;\n  cursor:grab;\n  width:100%;\n}\n\n.ts-review-wrapper:active{\n  cursor:grabbing;\n}\n\n.ts-review-slider{\n  display:flex;\n  width:max-content;\n  animation:scrollReviews 45s linear infinite;\n  user-select:none;\n}\n\n.ts-review-wrapper:hover .ts-review-slider{\n  animation-play-state:paused;\n}\n\n.ts-review-card{\n  width:300px;\n  min-height:210px;\n  background:#fff;\n  border-radius:20px;\n  padding:18px;\n  margin:0 12px;\n  box-shadow:0 5px 18px rgba(0,0,0,0.08);\n  flex-shrink:0;\n}\n\n.ts-review-top{\n  display:flex;\n  align-items:flex-start;\n  justify-content:space-between;\n  margin-bottom:14px;\n}\n\n.ts-review-user{\n  display:flex;\n  align-items:flex-start;\n}\n\n.ts-review-user img{\n  width:52px;\n  height:52px;\n  border-radius:50%;\n  object-fit:cover;\n  margin-right:12px;\n}\n\n.ts-review-info{\n  display:flex;\n  flex-direction:column;\n}\n\n.ts-review-name{\n  font-size:15px;\n  font-weight:700;\n  color:#111;\n  margin-bottom:4px;\n  font-family:Arial,sans-serif;\n}\n\n.ts-review-stars{\n  color:#ffb400;\n  font-size:16px;\n  margin-bottom:5px;\n  letter-spacing:1px;\n}\n\n.ts-review-platform{\n  font-size:12px;\n  color:#777;\n  display:flex;\n  align-items:center;\n  gap:5px;\n  font-family:Arial,sans-serif;\n}\n\n.ts-review-platform img{\n  width:14px;\n  height:14px;\n}\n\n.ts-review-text{\n  font-size:15px;\n  color:#333;\n  line-height:1.7;\n  font-family:Arial,sans-serif;\n}\n\n@keyframes scrollReviews{\n  0%{\n    transform:translateX(0);\n  }\n  100%{\n    transform:translateX(-50%);\n  }\n}\n\n@media(max-width:768px){\n\n  .ts-review-card{\n    width:260px;\n    min-height:200px;\n  }\n\n  .ts-review-title{\n    font-size:22px;\n  }\n\n}\n</style>\n\n<div class=\"ts-review-section\">\n\n  <div class=\"ts-review-title\">\n    Customer Reviews\n  </div>\n\n  <div class=\"ts-review-wrapper\" id=\"reviewWrapper\">\n\n    <div class=\"ts-review-slider\" id=\"reviewSlider\">\n\n      <!-- Review 1 -->\n      <div class=\"ts-review-card\">\n\n        <div class=\"ts-review-top\">\n\n          <div class=\"ts-review-user\">\n\n            <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/sdhgsheh.webp?v=1778927272\">\n\n            <div class=\"ts-review-info\">\n\n              <div class=\"ts-review-name\">Shaila Parvin Sharothy</div>\n\n              <div class=\"ts-review-stars\">★★★★★</div>\n\n              <div class=\"ts-review-platform\">\n                <img src=\"https://cdn-icons-png.flaticon.com/512/733/733547.png\">\n                Facebook\n              </div>\n\n            </div>\n\n          </div>\n\n        </div>\n\n        <div class=\"ts-review-text\">\n          Product ta use kore onek premium feel paichi.\n          Driving er somoy phone perfectly stable thake.\n        </div>\n\n      </div>\n\n      <!-- Review 2 -->\n      <div class=\"ts-review-card\">\n\n        <div class=\"ts-review-top\">\n\n          <div class=\"ts-review-user\">\n\n            <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/sdsgs.webp?v=1778927272\">\n\n            <div class=\"ts-review-info\">\n\n              <div class=\"ts-review-name\">Maisha</div>\n\n              <div class=\"ts-review-stars\">★★★★★</div>\n\n              <div class=\"ts-review-platform\">\n                <img src=\"https://cdn-icons-png.flaticon.com/512/2111/2111463.png\">\n                Instagram\n              </div>\n\n            </div>\n\n          </div>\n\n        </div>\n\n        <div class=\"ts-review-text\">\n          Magnet power ta really impressive.\n          Rough road eo phone move kore na.\n        </div>\n\n      </div>\n\n      <!-- Review 3 -->\n      <div class=\"ts-review-card\">\n\n        <div class=\"ts-review-top\">\n\n          <div class=\"ts-review-user\">\n\n            <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/ssdfgew.webp?v=1778927272\">\n\n            <div class=\"ts-review-info\">\n\n              <div class=\"ts-review-name\">Marma Way Sing</div>\n\n              <div class=\"ts-review-stars\">★★★★★</div>\n\n              <div class=\"ts-review-platform\">\n                <img src=\"https://cdn-icons-png.flaticon.com/512/733/733585.png\">\n                WhatsApp\n              </div>\n\n            </div>\n\n          </div>\n\n        </div>\n\n        <div class=\"ts-review-text\">\n          Dashboard e setup kora onek easy chilo.\n          Quality expected er cheye better.\n        </div>\n\n      </div>\n\n      <!-- Review 4 -->\n      <div class=\"ts-review-card\">\n\n        <div class=\"ts-review-top\">\n\n          <div class=\"ts-review-user\">\n\n            <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/dfgsgreg.webp?v=1778927272\">\n\n            <div class=\"ts-review-info\">\n\n              <div class=\"ts-review-name\">Döre Môń</div>\n\n              <div class=\"ts-review-stars\">★★★★★</div>\n\n              <div class=\"ts-review-platform\">\n                <img src=\"https://cdn-icons-png.flaticon.com/512/733/733547.png\">\n                Facebook\n              </div>\n\n            </div>\n\n          </div>\n\n        </div>\n\n        <div class=\"ts-review-text\">\n          360 rotate feature ta daily use e onek helpful.\n          Navigation use kora ekhon easier.\n        </div>\n\n      </div>\n\n      <!-- Review 5 -->\n      <div class=\"ts-review-card\">\n\n        <div class=\"ts-review-top\">\n\n          <div class=\"ts-review-user\">\n\n            <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/asgawgwe.webp?v=1778927272\">\n\n            <div class=\"ts-review-info\">\n\n              <div class=\"ts-review-name\">Shorna Islam Eikra</div>\n\n              <div class=\"ts-review-stars\">★★★★★</div>\n\n              <div class=\"ts-review-platform\">\n                <img src=\"https://cdn-icons-png.flaticon.com/512/2111/2111463.png\">\n                Instagram\n              </div>\n\n            </div>\n\n          </div>\n\n        </div>\n\n        <div class=\"ts-review-text\">\n          Delivery fast chilo ar packaging o beautiful.\n          Product ta fully worth the money.\n        </div>\n\n      </div>\n\n      <!-- Review 6 -->\n      <div class=\"ts-review-card\">\n\n        <div class=\"ts-review-top\">\n\n          <div class=\"ts-review-user\">\n\n            <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/sgsge.webp?v=1778927272\">\n\n            <div class=\"ts-review-info\">\n\n              <div class=\"ts-review-name\">MST. ELMA</div>\n\n              <div class=\"ts-review-stars\">★★★★★</div>\n\n              <div class=\"ts-review-platform\">\n                <img src=\"https://cdn-icons-png.flaticon.com/512/733/733585.png\">\n                WhatsApp\n              </div>\n\n            </div>\n\n          </div>\n\n        </div>\n\n        <div class=\"ts-review-text\">\n          Long drive er somoy phone ekdom secure thake.\n          Build quality ta really solid.\n        </div>\n\n      </div>\n\n      <!-- Review 7 -->\n      <div class=\"ts-review-card\">\n\n        <div class=\"ts-review-top\">\n\n          <div class=\"ts-review-user\">\n\n            <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/sdfsfsf.webp?v=1778927272\">\n\n            <div class=\"ts-review-info\">\n\n              <div class=\"ts-review-name\">Mariya</div>\n\n              <div class=\"ts-review-stars\">★★★★★</div>\n\n              <div class=\"ts-review-platform\">\n                <img src=\"https://cdn-icons-png.flaticon.com/512/733/733547.png\">\n                Facebook\n              </div>\n\n            </div>\n\n          </div>\n\n        </div>\n\n        <div class=\"ts-review-text\">\n          Product ta dekhte classy lage.\n          Car interior er sathe perfectly match kore.\n        </div>\n\n      </div>\n\n      <!-- Review 8 -->\n      <div class=\"ts-review-card\">\n\n        <div class=\"ts-review-top\">\n\n          <div class=\"ts-review-user\">\n\n            <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/ddfsgg.webp?v=1778927272\">\n\n            <div class=\"ts-review-info\">\n\n              <div class=\"ts-review-name\">MD Abdul Alim</div>\n\n              <div class=\"ts-review-stars\">★★★★★</div>\n\n              <div class=\"ts-review-platform\">\n                <img src=\"https://cdn-icons-png.flaticon.com/512/2111/2111463.png\">\n                Instagram\n              </div>\n\n            </div>\n\n          </div>\n\n        </div>\n\n        <div class=\"ts-review-text\">\n          Holder ta strong and reliable.\n          Daily driving e use kore onek satisfied.\n        </div>\n\n      </div>\n\n      <!-- Duplicate Reviews -->\n\n      <div class=\"ts-review-card\">\n\n        <div class=\"ts-review-top\">\n\n          <div class=\"ts-review-user\">\n\n            <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/sdhgsheh.webp?v=1778927272\">\n\n            <div class=\"ts-review-info\">\n\n              <div class=\"ts-review-name\">Shaila Parvin Sharothy</div>\n\n              <div class=\"ts-review-stars\">★★★★★</div>\n\n              <div class=\"ts-review-platform\">\n                <img src=\"https://cdn-icons-png.flaticon.com/512/733/733547.png\">\n                Facebook\n              </div>\n\n            </div>\n\n          </div>\n\n        </div>\n\n        <div class=\"ts-review-text\">\n          Product ta use kore onek premium feel paichi.\n          Driving er somoy phone perfectly stable thake.\n        </div>\n\n      </div>\n\n      <div class=\"ts-review-card\">\n\n        <div class=\"ts-review-top\">\n\n          <div class=\"ts-review-user\">\n\n            <img src=\"https://cdn.shopify.com/s/files/1/0797/4302/5379/files/sdsgs.webp?v=1778927272\">\n\n            <div class=\"ts-review-info\">\n\n              <div class=\"ts-review-name\">Maisha</div>\n\n              <div class=\"ts-review-stars\">★★★★★</div>\n\n              <div class=\"ts-review-platform\">\n                <img src=\"https://cdn-icons-png.flaticon.com/512/2111/2111463.png\">\n                Instagram\n              </div>\n\n            </div>\n\n          </div>\n\n        </div>\n\n        <div class=\"ts-review-text\">\n          Magnet power ta really impressive.\n          Rough road eo phone move kore na.\n        </div>\n\n      </div>\n\n    </div>\n\n  </div>\n\n</div>\n\n<script>\nconst wrapper = document.getElementById('reviewWrapper');\nconst slider = document.getElementById('reviewSlider');\n\nlet isDown = false;\nlet startX;\nlet scrollLeft;\n\nwrapper.addEventListener('mousedown', (e) => {\n  isDown = true;\n  wrapper.style.cursor = 'grabbing';\n  slider.style.animationPlayState = 'paused';\n\n  startX = e.pageX - wrapper.offsetLeft;\n  scrollLeft = wrapper.scrollLeft;\n});\n\nwrapper.addEventListener('mouseleave', () => {\n  isDown = false;\n  wrapper.style.cursor = 'grab';\n  slider.style.animationPlayState = 'running';\n});\n\nwrapper.addEventListener('mouseup', () => {\n  isDown = false;\n  wrapper.style.cursor = 'grab';\n  slider.style.animationPlayState = 'running';\n});\n\nwrapper.addEventListener('mousemove', (e) => {\n  if(!isDown) return;\n\n  e.preventDefault();\n\n  const x = e.pageX - wrapper.offsetLeft;\n  const walk = (x - startX) * 2;\n\n  wrapper.scrollLeft = scrollLeft - walk;\n});\n\nwrapper.addEventListener('touchstart', (e) => {\n  slider.style.animationPlayState = 'paused';\n\n  startX = e.touches[0].pageX;\n  scrollLeft = wrapper.scrollLeft;\n});\n\nwrapper.addEventListener('touchmove', (e) => {\n  const x = e.touches[0].pageX;\n  const walk = (x - startX) * 2;\n\n  wrapper.scrollLeft = scrollLeft - walk;\n});\n\nwrapper.addEventListener('touchend', () => {\n  slider.style.animationPlayState = 'running';\n});\n</script>"
+          }
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "custom_liquid_wCVRPy",
+        "price",
+        "custom_liquid_kPhepe",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "custom_liquid_EgApwW",
+        "custom_liquid_P4AXrG",
+        "collapsible_tab_L4cnC3",
+        "collapsible_tab_xFnFn9",
+        "collapsible_tab_xrUJ3K",
+        "collapsible_tab_w7tnDe",
+        "icon_with_text_t8V7XG",
+        "custom_liquid_DxbnTQ",
+        "share"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "stacked",
+        "mobile_thumbnails": "hide",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "177841825965e566c2": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "related-products",
+    "177841825965e566c2"
+  ]
+}
