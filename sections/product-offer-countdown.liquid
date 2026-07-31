@@ -1,0 +1,695 @@
+{%- comment -%}
+  Product Offer Countdown — Theme Editor → Product page → Add section → "Product Offer Countdown"
+  Discount auto-calculates from variant Compare-at price vs Price (Shopify admin).
+{%- endcomment -%}
+
+{%- liquid
+  assign variant = product.selected_or_first_available_variant
+  assign compare_cents = variant.compare_at_price
+  assign price_cents = variant.price
+  assign has_sale = false
+  assign discount_percent = 0
+  assign discount_amount_cents = 0
+
+  if compare_cents != blank and compare_cents > price_cents
+    assign has_sale = true
+    assign discount_amount_cents = compare_cents | minus: price_cents
+    assign discount_percent = discount_amount_cents | times: 100 | divided_by: compare_cents
+  endif
+
+  assign timer_seconds = section.settings.timer_minutes | times: 60
+  assign font_family = section.settings.font.family | default: 'Inter, Arial, sans-serif'
+  assign font_weight = section.settings.font.weight | default: '600'
+  assign font_style = section.settings.font.style | default: 'normal'
+
+  assign discount_label = section.settings.manual_discount_text
+  if section.settings.discount_mode == 'auto_percent' and has_sale
+    assign discount_label = discount_percent | append: '% OFF'
+  elsif section.settings.discount_mode == 'auto_amount' and has_sale
+    assign discount_label = discount_amount_cents | money_without_trailing_zeros | append: ' OFF'
+  elsif section.settings.discount_mode == 'auto_percent' or section.settings.discount_mode == 'auto_amount'
+    assign discount_label = ''
+  endif
+-%}
+
+{{ section.settings.font | font_face: font_display: 'swap' }}
+
+{%- style -%}
+    #OfferCountdown-{{ section.id }} {
+      --oc-max-width: {{ section.settings.max_width }}px;
+      --oc-margin-y: {{ section.settings.bar_margin_y }}px;
+      --oc-padding-x: {{ section.settings.bar_padding_x }}px;
+      --oc-padding-y: {{ section.settings.bar_padding_y }}px;
+      --oc-gap: {{ section.settings.bar_gap }}px;
+      --oc-radius: {{ section.settings.border_radius }}px;
+      --oc-bg: {{ section.settings.bar_background }};
+      --oc-border: {{ section.settings.bar_border }};
+      --oc-text: {{ section.settings.offer_text_color }};
+      --oc-discount: {{ section.settings.discount_color }};
+      --oc-ends: {{ section.settings.ends_text_color }};
+      --oc-offer-size: {{ section.settings.offer_font_size }}px;
+      --oc-discount-size: {{ section.settings.discount_font_size }}px;
+      --oc-countdown-bg: {{ section.settings.countdown_background }};
+      --oc-countdown-text: {{ section.settings.countdown_text_color }};
+      --oc-countdown-border: {{ section.settings.countdown_border }};
+      --oc-countdown-size: {{ section.settings.countdown_font_size }}px;
+      --oc-countdown-min-w: {{ section.settings.countdown_min_width }}px;
+      --oc-countdown-height: {{ section.settings.countdown_height }}px;
+      --oc-font: {{ font_family }};
+      --oc-font-weight: {{ font_weight }};
+      --oc-font-style: {{ font_style }};
+      --oc-section-pt: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      --oc-section-pb: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+
+    @media screen and (min-width: 750px) {
+      #OfferCountdown-{{ section.id }} {
+        --oc-section-pt: {{ section.settings.padding_top }}px;
+        --oc-section-pb: {{ section.settings.padding_bottom }}px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #OfferCountdown-{{ section.id }} {
+        --oc-offer-size: {{ section.settings.offer_font_size_mobile }}px;
+        --oc-discount-size: {{ section.settings.discount_font_size_mobile }}px;
+        --oc-countdown-size: {{ section.settings.countdown_font_size_mobile }}px;
+        --oc-countdown-min-w: {{ section.settings.countdown_min_width_mobile }}px;
+        --oc-countdown-height: {{ section.settings.countdown_height_mobile }}px;
+      }
+    }
+  {%- endstyle -%}
+
+  <div
+    id="OfferCountdown-{{ section.id }}"
+    class="offer-countdown-wrap{% if section.settings.hide_when_no_sale and discount_label == blank and section.settings.discount_mode != 'manual' %} is-hidden{% endif %}"
+    data-offer-countdown
+    data-section-id="{{ section.id }}"
+    data-timer-seconds="{{ timer_seconds }}"
+    data-persist-timer="{{ section.settings.persist_timer_in_session }}"
+    data-expired-behavior="{{ section.settings.when_timer_expires }}"
+    data-discount-mode="{{ section.settings.discount_mode }}"
+    data-currency-symbol="{{ cart.currency.symbol | escape }}"
+    {{ section.shopify_attributes }}
+  >
+    <div class="offer-bar" data-offer-bar>
+      <div class="offer-text">
+        <span class="discount" data-offer-discount>{{ discount_label | escape }}</span>
+        {%- if section.settings.ends_text != blank -%}
+          <span class="ends">{{ section.settings.ends_text | escape }}</span>
+        {%- endif -%}
+      </div>
+      <div class="countdown" data-offer-timer aria-live="polite">00:00</div>
+    </div>
+
+    <script type="application/json" data-offer-variants-json>
+    [
+      {%- for v in product.variants -%}
+        {
+          "id": {{ v.id | json }},
+          "price": {{ v.price | json }},
+          "compare_at_price": {{ v.compare_at_price | default: 0 | json }}
+        }{%- unless forloop.last -%},{%- endunless -%}
+      {%- endfor -%}
+    ]
+    </script>
+  </div>
+
+  <style>
+    #OfferCountdown-{{ section.id }}.offer-countdown-wrap {
+      padding-top: var(--oc-section-pt);
+      padding-bottom: var(--oc-section-pb);
+    }
+
+    #OfferCountdown-{{ section.id }} .offer-bar {
+      max-width: var(--oc-max-width);
+      margin: var(--oc-margin-y) auto;
+      padding: var(--oc-padding-y) var(--oc-padding-x);
+      background: var(--oc-bg);
+      border: 1px solid var(--oc-border);
+      border-radius: var(--oc-radius);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: var(--oc-gap);
+      font-family: var(--oc-font);
+      font-style: var(--oc-font-style);
+      box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    }
+
+    #OfferCountdown-{{ section.id }} .offer-text {
+      color: var(--oc-text);
+      font-size: var(--oc-offer-size);
+      font-weight: var(--oc-font-weight);
+      letter-spacing: 0.2px;
+      line-height: 1;
+    }
+
+    #OfferCountdown-{{ section.id }} .discount {
+      color: var(--oc-discount);
+      font-size: var(--oc-discount-size);
+      font-weight: 700;
+    }
+
+    #OfferCountdown-{{ section.id }} .ends {
+      color: var(--oc-ends);
+      margin-left: 4px;
+    }
+
+    #OfferCountdown-{{ section.id }} .countdown {
+      background: var(--oc-countdown-bg);
+      color: var(--oc-countdown-text);
+      border: 1px solid var(--oc-countdown-border);
+      padding: 4px 10px;
+      border-radius: 7px;
+      font-size: var(--oc-countdown-size);
+      font-weight: 800;
+      min-width: var(--oc-countdown-min-w);
+      height: var(--oc-countdown-height);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      letter-spacing: 0.8px;
+      box-sizing: border-box;
+      flex-shrink: 0;
+    }
+
+    #OfferCountdown-{{ section.id }}.is-hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 480px) {
+      #OfferCountdown-{{ section.id }} .offer-bar {
+        max-width: 100%;
+        margin: 8px 12px;
+      }
+    }
+  </style>
+
+  <script>
+    (function () {
+      var ROOT = document.getElementById('OfferCountdown-{{ section.id }}');
+      if (!ROOT) return;
+
+      var timerEl = ROOT.querySelector('[data-offer-timer]');
+      var discountEl = ROOT.querySelector('[data-offer-discount]');
+      var barEl = ROOT.querySelector('[data-offer-bar]');
+      var variantsJson = ROOT.querySelector('[data-offer-variants-json]');
+      var variants = variantsJson ? JSON.parse(variantsJson.textContent) : [];
+      var variantMap = {};
+      variants.forEach(function (v) {
+        variantMap[String(v.id)] = v;
+      });
+
+      var config = {
+        timerSeconds: parseInt(ROOT.dataset.timerSeconds, 10) || 0,
+        persist: ROOT.dataset.persistTimer === 'true',
+        expiredBehavior: ROOT.dataset.expiredBehavior || 'show_zero',
+        discountMode: ROOT.dataset.discountMode || 'auto_percent',
+        manualText: {{ section.settings.manual_discount_text | json }},
+        hideWhenNoSale: {{ section.settings.hide_when_no_sale | json }},
+        expiredText: {{ section.settings.expired_discount_text | json }}
+      };
+
+      var storageKey = 'offerCountdown_{{ section.id }}';
+      var timeLeft = config.timerSeconds;
+      var timerId = null;
+
+      function formatMoney(cents) {
+        var amount = Math.round(cents / 100);
+        try {
+          return new Intl.NumberFormat(document.documentElement.lang || 'en', {
+            style: 'currency',
+            currency: '{{ cart.currency.iso_code }}',
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0
+          }).format(amount);
+        } catch (e) {
+          return (ROOT.dataset.currencySymbol || '') + amount;
+        }
+      }
+
+      function discountLabelForVariant(variant) {
+        if (!variant) return config.manualText || '';
+        var compare = variant.compare_at_price || 0;
+        var price = variant.price || 0;
+        if (compare <= price) {
+          if (config.discountMode === 'manual') return config.manualText || '';
+          return '';
+        }
+        var saving = compare - price;
+        if (config.discountMode === 'auto_amount') {
+          return formatMoney(saving) + ' OFF';
+        }
+        if (config.discountMode === 'auto_percent') {
+          var pct = Math.round((saving * 100) / compare);
+          return pct + '% OFF';
+        }
+        return config.manualText || '';
+      }
+
+      function applyVariant(variantId) {
+        var variant = variantMap[String(variantId)];
+        if (!variant && variants.length) variant = variants[0];
+        var label = discountLabelForVariant(variant);
+        if (discountEl) discountEl.textContent = label;
+
+        var hide =
+          config.hideWhenNoSale &&
+          (config.discountMode === 'auto_percent' || config.discountMode === 'auto_amount') &&
+          !label;
+
+        ROOT.classList.toggle('is-hidden', hide);
+      }
+
+      function loadTimerState() {
+        if (!config.persist || !window.sessionStorage) return config.timerSeconds;
+        try {
+          var raw = sessionStorage.getItem(storageKey);
+          if (!raw) return config.timerSeconds;
+          var data = JSON.parse(raw);
+          if (data.duration !== config.timerSeconds) return config.timerSeconds;
+          var elapsed = Math.floor((Date.now() - data.started) / 1000);
+          return Math.max(0, config.timerSeconds - elapsed);
+        } catch (e) {
+          return config.timerSeconds;
+        }
+      }
+
+      function saveTimerStart() {
+        if (!config.persist || !window.sessionStorage) return;
+        try {
+          sessionStorage.setItem(
+            storageKey,
+            JSON.stringify({ started: Date.now(), duration: config.timerSeconds })
+          );
+        } catch (e) {}
+      }
+
+      function onExpired() {
+        if (timerEl) timerEl.textContent = '00:00';
+        if (config.expiredBehavior === 'hide_section') {
+          ROOT.classList.add('is-hidden');
+        } else if (config.expiredBehavior === 'clear_discount' && discountEl) {
+          discountEl.textContent = config.expiredText || '';
+        }
+        if (timerId) clearInterval(timerId);
+      }
+
+      function tick() {
+        if (timeLeft <= 0) {
+          onExpired();
+          return;
+        }
+        var minutes = Math.floor(timeLeft / 60);
+        var seconds = timeLeft % 60;
+        if (timerEl) {
+          timerEl.textContent =
+            String(minutes).padStart(2, '0') + ':' + String(seconds).padStart(2, '0');
+        }
+        timeLeft--;
+      }
+
+      function startTimer() {
+        timeLeft = loadTimerState();
+        if (config.persist && timeLeft === config.timerSeconds) saveTimerStart();
+        tick();
+        timerId = setInterval(tick, 1000);
+      }
+
+      function getSelectedVariantId() {
+        var input = document.querySelector('form[action*="/cart/add"] input[name="id"]');
+        return input && input.value ? input.value : String({{ variant.id | json }});
+      }
+
+      function initVariantSync() {
+        applyVariant(getSelectedVariantId());
+
+        function trySubscribe() {
+          if (typeof subscribe === 'function' && typeof PUB_SUB_EVENTS !== 'undefined') {
+            subscribe(PUB_SUB_EVENTS.variantChange, function (event) {
+              if (event && event.data && event.data.variant) {
+                applyVariant(event.data.variant.id);
+              }
+            });
+            return true;
+          }
+          return false;
+        }
+
+        if (!trySubscribe()) {
+          document.addEventListener('DOMContentLoaded', function () {
+            setTimeout(trySubscribe, 150);
+          });
+        }
+
+        document.querySelectorAll('form[action*="/cart/add"] input[name="id"]').forEach(function (el) {
+          el.addEventListener('change', function () {
+            applyVariant(el.value);
+          });
+        });
+      }
+
+      startTimer();
+      initVariantSync();
+    })();
+  </script>
+
+{% schema %}
+{
+  "name": "Product Offer Countdown",
+  "tag": "section",
+  "class": "section-product-offer-countdown",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Discount text"
+    },
+    {
+      "type": "select",
+      "id": "discount_mode",
+      "label": "Discount display",
+      "default": "auto_percent",
+      "options": [
+        { "value": "auto_percent", "label": "Auto — percent OFF (Compare-at vs Price)" },
+        { "value": "auto_amount", "label": "Auto — money OFF (Compare-at vs Price)" },
+        { "value": "manual", "label": "Manual — fixed text only" }
+      ],
+      "info": "Auto modes use each variant's Compare-at price and Price from Shopify product admin."
+    },
+    {
+      "type": "text",
+      "id": "manual_discount_text",
+      "label": "Manual discount text",
+      "default": "20% OFF",
+      "info": "Used when display is Manual, or when there is no compare-at price (auto modes)."
+    },
+    {
+      "type": "text",
+      "id": "ends_text",
+      "label": "Text after discount",
+      "default": "Ends In"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_when_no_sale",
+      "label": "Hide bar when no compare-at discount (auto modes)",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Countdown timer"
+    },
+    {
+      "type": "range",
+      "id": "timer_minutes",
+      "min": 1,
+      "max": 180,
+      "step": 1,
+      "unit": "min",
+      "label": "Timer duration (minutes)",
+      "default": 47
+    },
+    {
+      "type": "checkbox",
+      "id": "persist_timer_in_session",
+      "label": "Continue same countdown if visitor refreshes page",
+      "default": true,
+      "info": "Uses browser session storage until tab is closed."
+    },
+    {
+      "type": "select",
+      "id": "when_timer_expires",
+      "label": "When timer reaches 00:00",
+      "default": "show_zero",
+      "options": [
+        { "value": "show_zero", "label": "Keep bar visible (timer stays 00:00)" },
+        { "value": "clear_discount", "label": "Clear discount text only" },
+        { "value": "hide_section", "label": "Hide entire offer bar" }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "expired_discount_text",
+      "label": "Text after discount clears",
+      "default": "Offer ended"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bar_background",
+      "label": "Bar background",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "bar_border",
+      "label": "Bar border",
+      "default": "#2a2a2a"
+    },
+    {
+      "type": "color",
+      "id": "offer_text_color",
+      "label": "Offer text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "discount_color",
+      "label": "Discount highlight color",
+      "default": "#f5d06f"
+    },
+    {
+      "type": "color",
+      "id": "ends_text_color",
+      "label": "\"Ends in\" text color",
+      "default": "#b3b3b3"
+    },
+    {
+      "type": "color",
+      "id": "countdown_background",
+      "label": "Countdown background",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "countdown_border",
+      "label": "Countdown border",
+      "default": "#c9a84a"
+    },
+    {
+      "type": "color",
+      "id": "countdown_text_color",
+      "label": "Countdown text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Typography & layout"
+    },
+    {
+      "type": "font_picker",
+      "id": "font",
+      "label": "Font",
+      "default": "inter_n4"
+    },
+    {
+      "type": "range",
+      "id": "offer_font_size",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Offer text size (desktop)",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "discount_font_size",
+      "min": 10,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "Discount text size (desktop)",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "offer_font_size_mobile",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Offer text size (mobile)",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "discount_font_size_mobile",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Discount text size (mobile)",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 280,
+      "max": 720,
+      "step": 10,
+      "unit": "px",
+      "label": "Bar max width",
+      "default": 420
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Bar corner radius",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "bar_gap",
+      "min": 4,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Gap between text and timer",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "bar_margin_y",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Bar vertical margin",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "bar_padding_x",
+      "min": 8,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Bar horizontal padding",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "bar_padding_y",
+      "min": 4,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Bar vertical padding",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "countdown_font_size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Countdown font size (desktop)",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "countdown_font_size_mobile",
+      "min": 10,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "label": "Countdown font size (mobile)",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "countdown_min_width",
+      "min": 48,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "Countdown min width (desktop)",
+      "default": 62
+    },
+    {
+      "type": "range",
+      "id": "countdown_min_width_mobile",
+      "min": 48,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Countdown min width (mobile)",
+      "default": 58
+    },
+    {
+      "type": "range",
+      "id": "countdown_height",
+      "min": 24,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Countdown height (desktop)",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "countdown_height_mobile",
+      "min": 24,
+      "max": 44,
+      "step": 2,
+      "unit": "px",
+      "label": "Countdown height (mobile)",
+      "default": 28
+    },
+    {
+      "type": "header",
+      "content": "Section spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Offer Countdown"
+    }
+  ],
+  "enabled_on": {
+    "templates": ["product"]
+  }
+}
+{% endschema %}
